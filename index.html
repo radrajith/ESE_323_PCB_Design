@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ese 323 pcb design by radrajith</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ese 323 pcb design</h1>
+        <h2>Modern Circuit Board Design and Prototyping</h2>
+        <a href="https://github.com/radrajith/ESE_323_PCB_Design" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a id="welcome-to-my-ese-323-project-page" class="anchor" href="#welcome-to-my-ese-323-project-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to my ESE 323 project page</h2>
+
+<h3>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h3>
+
+<p>ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we are designing circuits using eagle cad software and also designing and building 3d models using Autocad. An Improved current meter will be designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. </p>
+
+<h3>
+<a id="design-and-spec" class="anchor" href="#design-and-spec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>design and spec</h3>
+
+<p>The current meter will be designed to include 2 ranges – 100mA and 1A. The maximum current rating is set to be 10A and will only be able to read positive DC currents. The circuit will be powered by primary 5v battery(the ones used for charging cell phones), and the analog current measurement will be sampled at 12kSPS (based on atxmega32 specs), and the digital output will have 12-bit resolution. The circuit will be protected using a fuse.</p>
+
+<p>Since the class is about coming with our own design and specs, I decided to add some extra feature to make this project cooler. A LCD touch screen is added to display the current readings such as peak, instantaneous, rms etc. In addition the LCD will be used to graph continuous data assuming I will finish the programming on time. Since the programming had to go through a number of revision a PDI communication will be implemented to modify the code as intended. In addition to serving as a normal current meter, A USB port will be added to monitor the current usage of mobile phone or other devices charged using USB. A micro usb port will be used as the input and USB as output. </p>
+
+<h3>
+<a id="design-considerations-and-compromises" class="anchor" href="#design-considerations-and-compromises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design Considerations and compromises</h3>
+
+<h2>
+<a id="--a-4-pin-i2c-communication-port-is-added-to-provide-an-alternative-display-source-in-case-the-touch-screen-display-malfunctions-" class="anchor" href="#--a-4-pin-i2c-communication-port-is-added-to-provide-an-alternative-display-source-in-case-the-touch-screen-display-malfunctions-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>- A 4 pin i2c communication port is added to provide an alternative display source in case the touch screen display malfunctions. </h2>
+
+<h3>
+<a id="parts-planned-to-used" class="anchor" href="#parts-planned-to-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parts planned to used</h3>
+
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/61v8G9TUcIL._SL1100_.jpg" alt="LCD TFT display front view"></p>
+
+<h3>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+
+<p><a href="mailto:radrajith@gmail.com">radrajith@gmail.com</a> (2016)</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/radrajith/ESE_323_PCB_Design/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/radrajith/ESE_323_PCB_Design/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/radrajith/ESE_323_PCB_Design"></a> is maintained by <a href="https://github.com/radrajith">radrajith</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
