@@ -1,6 +1,5 @@
 .hoverinfo{
   position: relative;
-  right: 30px;
   font-size: 12px;
   color: #000000;
   cursor: pointer;
@@ -10,6 +9,8 @@
   color: #000000;
 }
 .hoverinfo:hover p {
+  position: relative;
+  right: 40px;
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
 }
