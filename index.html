@@ -4,7 +4,6 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="icon" href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/logo.jpg?raw=true">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
@@ -32,10 +31,14 @@
           <h2>
 <a id="welcome-to-my-ese-323-project-page" class="anchor" href="#welcome-to-my-ese-323-project-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to my ESE 323 project page</h2>
 
+<hr>
+
 <h3>
 <a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h3>
 
 <p>ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we are designing circuits using eagle cad software and also designing and building 3d models using Autocad. An Improved current meter will be designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. </p>
+
+<hr>
 
 <h3>
 <a id="design-and-spec" class="anchor" href="#design-and-spec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>design and spec</h3>
@@ -44,16 +47,515 @@
 
 <p>Since the class is about coming with our own design and specs, I decided to add some extra feature to make this project cooler. A LCD touch screen is added to display the current readings such as peak, instantaneous, rms etc. In addition the LCD will be used to graph continuous data assuming I will finish the programming on time. Since the programming had to go through a number of revision a PDI communication will be implemented to modify the code as intended. In addition to serving as a normal current meter, A USB port will be added to monitor the current usage of mobile phone or other devices charged using USB. A micro usb port will be used as the input and USB as output. </p>
 
+<hr>
+
 <h3>
 <a id="design-considerations-and-compromises" class="anchor" href="#design-considerations-and-compromises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design Considerations and compromises</h3>
 
-<h2>
-<a id="--a-4-pin-i2c-communication-port-is-added-to-provide-an-alternative-display-source-in-case-the-touch-screen-display-malfunctions-" class="anchor" href="#--a-4-pin-i2c-communication-port-is-added-to-provide-an-alternative-display-source-in-case-the-touch-screen-display-malfunctions-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>- A 4 pin i2c communication port is added to provide an alternative display source in case the touch screen display malfunctions. </h2>
+<ul>
+<li>A 4 pin i2c communication port is added to provide an alternative display source in case the touch screen display malfunctions. </li>
+</ul>
+
+<hr>
 
 <h3>
 <a id="parts-planned-to-used" class="anchor" href="#parts-planned-to-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parts planned to used</h3>
 
-<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/front_view.jpg?raw=true" alt="LCD TFT display front view"></p>
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/61v8G9TUcIL._SL1100_.jpg" alt="LCD TFT display front view"></p>
+
+<hr>
+
+<h3>
+<a id="bom" class="anchor" href="#bom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BOM</h3>
+
+<table>
+<thead>
+<tr>
+<th>Designation</th>
+<th>Description</th>
+<th>Manufacturer</th>
+<th>manufacturer part no</th>
+<th>vendor</th>
+<th>vendor part number</th>
+<th>quantity</th>
+<th>cost/part</th>
+<th>Total price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>LCD display</td>
+<td>uxcell</td>
+<td>a14121800ux0780</td>
+<td>Amazon</td>
+<td></td>
+<td>1</td>
+<td>13.36</td>
+<td>13.36</td>
+<td>3.3V 240x320 2.4" SPI TFT LCD Touch Panel Module <a href="https://www.amazon.com/gp/product/B00W8TPNIK/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;psc=1">https://www.amazon.com/gp/product/B00W8TPNIK/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;psc=1</a>"</td>
+</tr>
+<tr>
+<td></td>
+<td>Universal 4 pin connector</td>
+<td>Seeedstudio</td>
+<td></td>
+<td>mouser</td>
+<td></td>
+<td>1</td>
+<td>1.5</td>
+<td>1.5</td>
+<td>connector for seeedstudio rgb lcd screen.</td>
+</tr>
+<tr>
+<td></td>
+<td>Micro Usb</td>
+<td>Amphenol FCI</td>
+<td>10118192-0001LF</td>
+<td>Digikey</td>
+<td>609-4613-1-ND</td>
+<td>2</td>
+<td>0.46</td>
+<td>0.92</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>RGB lcd display</td>
+<td>Seeedstudio</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>already own this product</td>
+</tr>
+<tr>
+<td></td>
+<td>USB</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>ask prof</td>
+</tr>
+<tr>
+<td></td>
+<td>Jtag</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>ask prof</td>
+</tr>
+<tr>
+<td></td>
+<td>Atxmega 32</td>
+<td>atmel</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>obtain from prof</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>black Banana plugs</td>
+<td>Cinch connectivity</td>
+<td>105-0753-001</td>
+<td>digikey</td>
+<td>J110-ND</td>
+<td>1</td>
+<td>0.87</td>
+<td>0.87</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>red Banana plugs</td>
+<td>Cinch connectivity</td>
+<td>105-0752-001</td>
+<td>Digikey</td>
+<td>J109-ND</td>
+<td>1</td>
+<td>0.87</td>
+<td>0.87</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>4 pin Resistor</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Printed Circuit Board</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Switching power supply parts list</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cramp</td>
+<td>capacitor</td>
+<td>Samsung Electro-Mechanics</td>
+<td>CL21C122JBFNNWE</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Lout</td>
+<td>inductor</td>
+<td>Bourns</td>
+<td>SRN8040-330M</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.58</td>
+<td>$0.58</td>
+<td></td>
+</tr>
+<tr>
+<td>Rfb2</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW040216K2FKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Rfb1</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW040210K0FKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Ccomp2</td>
+<td>capacitor</td>
+<td>MuRata</td>
+<td>GRM2195C1H512JA01D</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.27</td>
+<td>$0.27</td>
+<td></td>
+</tr>
+<tr>
+<td>Rsense</td>
+<td>resistor</td>
+<td>Panasonic</td>
+<td>ERJ-L14KF33MU</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.78</td>
+<td>$0.78</td>
+<td></td>
+</tr>
+<tr>
+<td>Csep</td>
+<td>capacitor</td>
+<td>MuRata</td>
+<td>GRM21BR71A225KA01L</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.16</td>
+<td>$0.16</td>
+<td></td>
+</tr>
+<tr>
+<td>Cout</td>
+<td>capacitor</td>
+<td>MuRata</td>
+<td>GRM31CR60J107ME39L</td>
+<td>TI</td>
+<td>TI</td>
+<td>2</td>
+<td>$0.60</td>
+<td>$1.20</td>
+<td></td>
+</tr>
+<tr>
+<td>Cin</td>
+<td>capacitor</td>
+<td>Panasonic</td>
+<td>10TPU4R7MSI</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$1.18</td>
+<td>$1.18</td>
+<td></td>
+</tr>
+<tr>
+<td>Lin</td>
+<td>inductor</td>
+<td>NIC Components</td>
+<td>NPI75C120MTRF</td>
+<td>TI</td>
+<td>TI</td>
+<td>0</td>
+<td>$0.00</td>
+<td>$0.00</td>
+<td></td>
+</tr>
+<tr>
+<td>M1</td>
+<td>xxxx</td>
+<td>Texas Instruments</td>
+<td>CSD17308Q3</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.86</td>
+<td>$0.86</td>
+<td></td>
+</tr>
+<tr>
+<td>Rfadj</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW040269K8FKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Cbp</td>
+<td>capacitor</td>
+<td>MuRata</td>
+<td>GRM155R61A104KA01D</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>D1</td>
+<td>diode</td>
+<td>Diodes Inc.</td>
+<td>B220-13-F</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.47</td>
+<td>$0.47</td>
+<td></td>
+</tr>
+<tr>
+<td>Rbp</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW040220R0FKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Rcomp</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW04021K18FKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Rramp</td>
+<td>resistor</td>
+<td>Vishay-Dale</td>
+<td>CRCW0402100RFKED</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>Ccomp</td>
+<td>capacitor</td>
+<td>MuRata</td>
+<td>GRM155R61A823KA01D</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$0.10</td>
+<td>$0.10</td>
+<td></td>
+</tr>
+<tr>
+<td>U1</td>
+<td>Chip</td>
+<td>Texas Instruments</td>
+<td>LM3488MMX/NOPB</td>
+<td>TI</td>
+<td>TI</td>
+<td>1</td>
+<td>$2.19</td>
+<td>$2.19</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Total</td>
+<td>26.11</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<hr>
 
 <h3>
 <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
