@@ -10,7 +10,7 @@
 }
 .hoverinfo:hover p {
   position: relative;
-  right: 40px;
+  left: 100px;
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
 }
