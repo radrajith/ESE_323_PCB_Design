@@ -1740,7 +1740,7 @@ Based on  the following source:
 <part name="D1" library="AcceleratedDesigns_Lib" deviceset="B220-13-F" device="B220-13-F" value="500mV"/>
 <part name="GND" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
 <part name="M1" library="AcceleratedDesigns_Lib" deviceset="CSD17308Q3" device="CSD17308Q3" value="30V"/>
-<part name="COUT" library="AcceleratedDesigns_Lib" deviceset="GRM31CR60J107ME39L" device="GRM31CR60J107ME39L" value="100uF"/>
+<part name="COUT_1" library="AcceleratedDesigns_Lib" deviceset="GRM31CR60J107ME39L" device="GRM31CR60J107ME39L" value="100uF"/>
 <part name="RFADJ" library="AcceleratedDesigns_Lib" deviceset="CRCW040269K8FKED" device="CRCW040269K8FKED" value="69.8k"/>
 <part name="RFB1" library="AcceleratedDesigns_Lib" deviceset="CRCW040210K0FKED" device="CRCW040210K0FKED" value="10k"/>
 <part name="RFB2" library="AcceleratedDesigns_Lib" deviceset="CRCW040216K2FKED" device="CRCW040216K2FKED" value="16.2k"/>
@@ -1758,8 +1758,8 @@ Based on  the following source:
 <part name="IOUT" library="AcceleratedDesigns_Lib" deviceset="WB_CURRENT_LOAD" device="WB_CURRENT_LOAD" value="WB_CURRENT_LOAD"/>
 <part name="COUT_2" library="AcceleratedDesigns_Lib" deviceset="GRM31CR60J107ME39L" device="GRM31CR60J107ME39L" value="100uF"/>
 <part name="E$2" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
-<part name="X1" library="con-berg" deviceset="PN87520" device=""/>
-<part name="U$4" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
+<part name="E$3" library="con-berg" deviceset="PN87520" device=""/>
+<part name="E$1" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
 </parts>
 <sheets>
 <sheet>
@@ -1769,18 +1769,11 @@ Based on  the following source:
 <instance part="SV1" gate="G$1" x="-93.98" y="71.12"/>
 <instance part="U$1" gate="G$1" x="-35.56" y="71.12"/>
 <instance part="E$2" gate="G$1" x="104.14" y="88.9"/>
-<instance part="X1" gate="G$1" x="106.68" y="10.16"/>
+<instance part="E$3" gate="G$1" x="106.68" y="10.16"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$1" class="0">
-<segment>
-<pinref part="E$2" gate="G$1" pin="5"/>
-<wire x1="-40.64" y1="76.2" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="76.2" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
 </nets>
 </sheet>
 <sheet>
@@ -1814,7 +1807,7 @@ Based on  the following source:
 <attribute name="NAME" x="167.64" y="109.22" size="2" layer="95" align="top-center"/>
 <attribute name="VALUE" x="167.64" y="93.98" size="2" layer="96" align="bottom-center"/>
 </instance>
-<instance part="COUT" gate="1" x="346.71" y="83.82" smashed="yes" rot="R90">
+<instance part="COUT_1" gate="1" x="346.71" y="83.82" smashed="yes" rot="R90">
 <attribute name="NAME" x="349.758" y="88.138" size="2" layer="95"/>
 <attribute name="VALUE" x="349.758" y="83.566" size="2" layer="96"/>
 </instance>
@@ -1879,7 +1872,7 @@ Based on  the following source:
 <attribute name="NAME" x="367.538" y="88.138" size="2" layer="95"/>
 <attribute name="VALUE" x="367.538" y="83.566" size="2" layer="96"/>
 </instance>
-<instance part="U$4" gate="G$1" x="48.26" y="261.62" rot="R180"/>
+<instance part="E$1" gate="G$1" x="48.26" y="261.62" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -1900,7 +1893,7 @@ Based on  the following source:
 <pinref part="CIN" gate="1" pin="-@2"/>
 <pinref part="CRAMP" gate="1" pin="2@2"/>
 <pinref part="GND" gate="1" pin="1@1"/>
-<pinref part="COUT" gate="1" pin="2@2"/>
+<pinref part="COUT_1" gate="1" pin="2@2"/>
 <pinref part="RFADJ" gate="1" pin="1@1"/>
 <pinref part="RFB1" gate="1" pin="2@2"/>
 <pinref part="RSENSE" gate="1" pin="2@2"/>
@@ -1983,7 +1976,7 @@ Based on  the following source:
 <net name="2" class="0">
 <segment>
 <pinref part="D1" gate="1" pin="K@2"/>
-<pinref part="COUT" gate="1" pin="1@1"/>
+<pinref part="COUT_1" gate="1" pin="1@1"/>
 <pinref part="RFB2" gate="1" pin="1@1"/>
 <pinref part="IOUT" gate="1" pin="+@1"/>
 <pinref part="COUT_2" gate="1" pin="1@1"/>

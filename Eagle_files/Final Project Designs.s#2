@@ -1757,7 +1757,7 @@ Based on  the following source:
 <part name="VIN" library="AcceleratedDesigns_Lib" deviceset="WB_BATTERY" device="WB_BATTERY" value="WB_BATTERY"/>
 <part name="IOUT" library="AcceleratedDesigns_Lib" deviceset="WB_CURRENT_LOAD" device="WB_CURRENT_LOAD" value="WB_CURRENT_LOAD"/>
 <part name="COUT_2" library="AcceleratedDesigns_Lib" deviceset="GRM31CR60J107ME39L" device="GRM31CR60J107ME39L" value="100uF"/>
-<part name="U$2" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
+<part name="E$2" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
 <part name="X1" library="con-berg" deviceset="PN87520" device=""/>
 <part name="U$4" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P"/>
 </parts>
@@ -1768,12 +1768,19 @@ Based on  the following source:
 <instances>
 <instance part="SV1" gate="G$1" x="-93.98" y="71.12"/>
 <instance part="U$1" gate="G$1" x="-35.56" y="71.12"/>
-<instance part="U$2" gate="G$1" x="104.14" y="88.9"/>
+<instance part="E$2" gate="G$1" x="104.14" y="88.9"/>
 <instance part="X1" gate="G$1" x="106.68" y="10.16"/>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="N$1" class="0">
+<segment>
+<pinref part="E$2" gate="G$1" pin="5"/>
+<wire x1="-40.64" y1="76.2" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="76.2" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
