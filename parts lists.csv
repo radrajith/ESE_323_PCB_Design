@@ -6,15 +6,15 @@ Designation,Description,Manufacturer,manufacturer part no,vendor,vendor part num
 ,USB,,,,,1,0,0,ask prof
 ,Jtag,,,,,1,0,0,ask prof
 ,Atxmega 32,atmel,,,,1,0,0,obtain from prof
-,,,,,,,,,
+,Resistor,ohmite,LVK12R010FER,Digikey,LVK12R010FERTR-ND,1,0.7,0.7,
 ,black Banana plugs,Cinch connectivity,105-0753-001,digikey,J110-ND,1,0.87,0.87,
 ,red Banana plugs,Cinch connectivity,105-0752-001,Digikey,J109-ND,1,0.87,0.87,
 ,,,,,,,,,
 ,,,,,,,,,
-,,,,,,,,,
-,4 pin Resistor,,,,,,,,
-,,,,,,,,,
 ,Printed Circuit Board,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
 Switching Power Supply,,,,,,,,,
 ,L1,MuRata,LQM2HPN1R5MG0L,TI,,1,$0.34 ,$0.34 ,
 ,U1,Texas Instruments,TPS63051YFFR,TI,,1,$2.02 ,$2.02 ,
