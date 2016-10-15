@@ -384,7 +384,7 @@
 <parts>
 <part name="CIN" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ106KG-T" device="LMK212BJ106KG-T" value="10uF"/>
 <part name="COUT_1" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ226MG-T" device="LMK212BJ226MG-T" value="22uF"/>
-<part name="GND" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
+<part name="GND_1" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
 <part name="L1" library="AcceleratedDesigns_Lib" deviceset="LQM21PN1R5MC0D" device="LQM21PN1R5MC0D" value="1.5uH"/>
 <part name="RFBB" library="AcceleratedDesigns_Lib" deviceset="CRCW0402178KFKED" device="CRCW0402178KFKED" value="178k"/>
 <part name="RFBT" library="AcceleratedDesigns_Lib" deviceset="CRCW04021M00FKED" device="CRCW04021M00FKED" value="1M"/>
@@ -405,7 +405,7 @@
 <attribute name="NAME" x="152.908" y="67.818" size="2" layer="95"/>
 <attribute name="VALUE" x="152.908" y="63.246" size="2" layer="96"/>
 </instance>
-<instance part="GND" gate="1" x="92.71" y="27.94" smashed="yes">
+<instance part="GND_1" gate="1" x="92.71" y="27.94" smashed="yes">
 <attribute name="NAME" x="92.71" y="33.528" size="2" layer="95" align="bottom-center" display="off"/>
 </instance>
 <instance part="L1" gate="1" x="88.9" y="110.49" smashed="yes">
@@ -464,7 +464,7 @@
 <segment>
 <pinref part="CIN" gate="1" pin="2@2"/>
 <pinref part="COUT_1" gate="1" pin="2@2"/>
-<pinref part="GND" gate="1" pin="1@1"/>
+<pinref part="GND_1" gate="1" pin="1@1"/>
 <pinref part="RFBB" gate="1" pin="2@2"/>
 <pinref part="U1" gate="1" pin="PGND@3"/>
 <pinref part="U1" gate="1" pin="GND@9"/>
