@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -381,6 +381,16 @@
 <rectangle x1="-2.2286" y1="3.556" x2="-1.7714" y2="4.5466" layer="51"/>
 <rectangle x1="-3.0286" y1="3.556" x2="-2.5714" y2="4.5466" layer="51"/>
 </package>
+<package name="RESISTOR_4PIN">
+<smd name="P$1" x="2.13" y="3.38" dx="4.27" dy="1.68" layer="1"/>
+<smd name="P$2" x="-4.02" y="3.38" dx="4.27" dy="1.68" layer="1"/>
+<smd name="P$3" x="2.13" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
+<smd name="P$4" x="-4.02" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
+<wire x1="-6.858" y1="-6.35" x2="-6.858" y2="5.08" width="0.127" layer="1"/>
+<wire x1="-6.858" y1="5.08" x2="5.08" y2="5.08" width="0.127" layer="1"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="-6.35" width="0.127" layer="1"/>
+<wire x1="5.08" y1="-6.35" x2="-6.858" y2="-6.35" width="0.127" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LCD_HEADER">
@@ -436,20 +446,20 @@
 <wire x1="3.81" y1="-20.32" x2="3.81" y2="17.78" width="0.4064" layer="94"/>
 <text x="-6.35" y="-22.86" size="1.778" layer="96">&gt;VALUE</text>
 <text x="-6.35" y="21.082" size="1.778" layer="95">&gt;NAME</text>
-<pin name="T_IRQ" x="7.62" y="-17.78" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="T_DO" x="7.62" y="-15.24" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="T_DIN" x="7.62" y="-12.7" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="T_CS" x="7.62" y="-10.16" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="T_CLK" x="7.62" y="-7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="MISO" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="LED" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="SCK" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="MOSI" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="D/C" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="RESET" x="7.62" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="CS" x="7.62" y="10.16" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="GND" x="7.62" y="12.7" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="VCC" x="7.62" y="15.24" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="T_IRQ" x="7.62" y="-17.78" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="T_DO" x="7.62" y="-15.24" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="T_DIN" x="7.62" y="-12.7" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="T_CS" x="7.62" y="-10.16" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="T_CLK" x="7.62" y="-7.62" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="MISO" x="7.62" y="-5.08" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="LED" x="7.62" y="-2.54" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="SCK" x="7.62" y="0" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="MOSI" x="7.62" y="2.54" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="D/C" x="7.62" y="5.08" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="RESET" x="7.62" y="7.62" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="CS" x="7.62" y="10.16" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="GND" x="7.62" y="12.7" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="VCC" x="7.62" y="15.24" visible="off" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <wire x1="3.81" y1="17.78" x2="-6.35" y2="17.78" width="0.4064" layer="94"/>
 <text x="5.08" y="17.78" size="1.778" layer="94">1</text>
 <text x="5.08" y="-22.86" size="1.778" layer="94">14</text>
@@ -475,18 +485,12 @@
 <wire x1="-15.24" y1="-30.48" x2="-15.24" y2="27.94" width="0.254" layer="94"/>
 <text x="-15.24" y="-33.02" size="1.778" layer="96">&gt;VALUE</text>
 <text x="-15.24" y="28.702" size="1.778" layer="95">&gt;NAME</text>
-<pin name="(ADC5)PC5" x="17.78" y="7.62" length="middle" rot="R180"/>
-<pin name="(ADC4)PC4" x="17.78" y="5.08" length="middle" rot="R180"/>
-<pin name="(ADC3)PC3" x="17.78" y="2.54" length="middle" rot="R180"/>
-<pin name="(ADC2)PC2" x="17.78" y="0" length="middle" rot="R180"/>
-<pin name="(ADC1)PC1" x="17.78" y="-2.54" length="middle" rot="R180"/>
-<pin name="(ADC0)PC0" x="17.78" y="-5.08" length="middle" rot="R180"/>
-<pin name="(SCK)PB5" x="17.78" y="25.4" length="middle" rot="R180"/>
-<pin name="(MISO)PB4" x="17.78" y="22.86" length="middle" rot="R180"/>
-<pin name="(MOSI)PB3" x="17.78" y="20.32" length="middle" rot="R180"/>
-<pin name="(SS)PB2" x="17.78" y="17.78" length="middle" rot="R180"/>
-<pin name="(OC1)PB1" x="17.78" y="15.24" length="middle" rot="R180"/>
-<pin name="(ICP)PB0" x="17.78" y="12.7" length="middle" rot="R180"/>
+<pin name="(SCK)PC5" x="17.78" y="7.62" length="middle" rot="R180"/>
+<pin name="(SS!)PC4" x="17.78" y="5.08" length="middle" rot="R180"/>
+<pin name="PC3" x="17.78" y="2.54" length="middle" rot="R180"/>
+<pin name="PC2" x="17.78" y="0" length="middle" rot="R180"/>
+<pin name="(SCL)PC1" x="17.78" y="-2.54" length="middle" rot="R180"/>
+<pin name="(SDA)PC0" x="17.78" y="-5.08" length="middle" rot="R180"/>
 <pin name="(AIN1)PD7" x="17.78" y="-10.16" length="middle" rot="R180"/>
 <pin name="(AIN0)PD6" x="17.78" y="-12.7" length="middle" rot="R180"/>
 <pin name="(T1)PD5" x="17.78" y="-15.24" length="middle" rot="R180"/>
@@ -498,15 +502,46 @@
 <pin name="GND" x="-20.32" y="-5.08" length="middle" direction="pwr"/>
 <pin name="VCC" x="-20.32" y="-2.54" length="middle" direction="pwr"/>
 <pin name="AVCC" x="-20.32" y="5.08" length="middle" direction="pwr"/>
-<pin name="AREF" x="-20.32" y="7.62" length="middle" direction="pas"/>
-<pin name="XTAL1" x="-20.32" y="12.7" length="middle"/>
-<pin name="XTAL2" x="-20.32" y="17.78" length="middle"/>
-<pin name="RESET" x="-20.32" y="25.4" length="middle" direction="in" function="dot"/>
-<pin name="AGND" x="-20.32" y="2.54" length="middle" direction="pwr"/>
-<pin name="NC4" x="-15.24" y="-27.94" visible="off" length="point" direction="nc"/>
-<pin name="NC3" x="-15.24" y="-25.4" visible="off" length="point" direction="nc"/>
-<pin name="NC2" x="-15.24" y="-22.86" visible="off" length="point" direction="nc"/>
-<pin name="NC1" x="-15.24" y="-20.32" visible="off" length="point" direction="nc"/>
+<pin name="PDI(DATA)" x="-20.32" y="17.78" length="middle"/>
+<pin name="RESET/PDI(CLK)" x="-20.32" y="25.4" length="middle" direction="in" function="dot"/>
+<pin name="PA0(ADC0)" x="-20.32" y="-10.16" length="middle"/>
+<pin name="PA1(ADC1)" x="-20.32" y="-12.7" length="middle"/>
+<pin name="PA2(ADC2)" x="-20.32" y="-15.24" length="middle"/>
+<pin name="PA3(ADC3)" x="-20.32" y="-17.78" length="middle"/>
+<pin name="PA4(ADC4)" x="-20.32" y="-20.32" length="middle"/>
+<pin name="PA5(ADC5)" x="-20.32" y="-22.86" length="middle"/>
+<pin name="PA6(ADC6)" x="-20.32" y="-25.4" length="middle"/>
+<pin name="PA7(ADC7)" x="-20.32" y="-27.94" length="middle"/>
+<pin name="(MISO)PC6" x="17.78" y="10.16" length="middle" rot="R180"/>
+<pin name="(MOSI)PC7" x="17.78" y="12.7" length="middle" rot="R180"/>
+<pin name="PR0" x="17.78" y="17.78" length="middle" rot="R180"/>
+<pin name="PR1" x="17.78" y="20.32" length="middle" rot="R180"/>
+</symbol>
+<symbol name="RESISTOR_4PIN">
+<pin name="I_IN" x="-27.94" y="17.78" visible="pad" length="middle" rot="R270"/>
+<pin name="I_OUT" x="-27.94" y="-10.16" visible="pad" length="middle" rot="R90"/>
+<pin name="V-" x="-38.1" y="-2.54" visible="pad" length="middle"/>
+<pin name="V+" x="-38.1" y="10.16" visible="pad" length="middle"/>
+<wire x1="-33.02" y1="12.7" x2="-33.02" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-33.02" y1="-5.08" x2="-27.94" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="-5.08" x2="-22.86" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-33.02" y1="12.7" x2="-27.94" y2="12.7" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="12.7" x2="-22.86" y2="12.7" width="0.254" layer="94"/>
+<wire x1="-22.86" y1="12.7" x2="-22.86" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-26.67" y1="7.62" x2="-29.21" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-29.21" y1="6.35" x2="-26.67" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-26.67" y1="5.08" x2="-29.21" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-29.21" y1="3.81" x2="-26.67" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-26.67" y1="2.54" x2="-29.21" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-29.21" y1="1.27" x2="-26.67" y2="0" width="0.254" layer="94"/>
+<wire x1="-26.67" y1="0" x2="-27.94" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="-1.27" x2="-27.94" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-26.67" y1="7.62" x2="-27.94" y2="8.89" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="8.89" x2="-27.94" y2="12.7" width="0.254" layer="94"/>
+<text x="-26.67" y="10.16" size="1.778" layer="94">Iin</text>
+<text x="-27.94" y="-3.81" size="1.778" layer="94">Iout</text>
+<text x="-31.75" y="8.89" size="1.778" layer="94">V+</text>
+<text x="-31.75" y="-3.81" size="1.778" layer="94">V-</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -575,38 +610,37 @@ UART&lt;p&gt;
 <devices>
 <device name="A" package="TQFP32-08">
 <connects>
-<connect gate="G$1" pin="(ADC0)PC0" pad="23"/>
-<connect gate="G$1" pin="(ADC1)PC1" pad="24"/>
-<connect gate="G$1" pin="(ADC2)PC2" pad="25"/>
-<connect gate="G$1" pin="(ADC3)PC3" pad="26"/>
-<connect gate="G$1" pin="(ADC4)PC4" pad="27"/>
-<connect gate="G$1" pin="(ADC5)PC5" pad="28"/>
-<connect gate="G$1" pin="(AIN0)PD6" pad="10"/>
-<connect gate="G$1" pin="(AIN1)PD7" pad="11"/>
-<connect gate="G$1" pin="(ICP)PB0" pad="12"/>
-<connect gate="G$1" pin="(INT0)PD2" pad="32"/>
-<connect gate="G$1" pin="(INT1)PD3" pad="1"/>
-<connect gate="G$1" pin="(MISO)PB4" pad="16"/>
-<connect gate="G$1" pin="(MOSI)PB3" pad="15"/>
-<connect gate="G$1" pin="(OC1)PB1" pad="13"/>
-<connect gate="G$1" pin="(RXD)PD0" pad="30"/>
-<connect gate="G$1" pin="(SCK)PB5" pad="17"/>
-<connect gate="G$1" pin="(SS)PB2" pad="14"/>
-<connect gate="G$1" pin="(T0)PD4" pad="2"/>
-<connect gate="G$1" pin="(T1)PD5" pad="9"/>
-<connect gate="G$1" pin="(TXD)PD1" pad="31"/>
-<connect gate="G$1" pin="AGND" pad="21"/>
-<connect gate="G$1" pin="AREF" pad="20"/>
-<connect gate="G$1" pin="AVCC" pad="18"/>
-<connect gate="G$1" pin="GND" pad="5"/>
-<connect gate="G$1" pin="NC1" pad="3"/>
-<connect gate="G$1" pin="NC2" pad="6"/>
-<connect gate="G$1" pin="NC3" pad="19"/>
-<connect gate="G$1" pin="NC4" pad="22"/>
-<connect gate="G$1" pin="RESET" pad="29"/>
-<connect gate="G$1" pin="VCC" pad="4"/>
-<connect gate="G$1" pin="XTAL1" pad="7"/>
-<connect gate="G$1" pin="XTAL2" pad="8"/>
+<connect gate="G$1" pin="(AIN0)PD6" pad="22"/>
+<connect gate="G$1" pin="(AIN1)PD7" pad="21"/>
+<connect gate="G$1" pin="(INT0)PD2" pad="26"/>
+<connect gate="G$1" pin="(INT1)PD3" pad="25"/>
+<connect gate="G$1" pin="(MISO)PC6" pad="10"/>
+<connect gate="G$1" pin="(MOSI)PC7" pad="9"/>
+<connect gate="G$1" pin="(RXD)PD0" pad="28"/>
+<connect gate="G$1" pin="(SCK)PC5" pad="11"/>
+<connect gate="G$1" pin="(SCL)PC1" pad="15"/>
+<connect gate="G$1" pin="(SDA)PC0" pad="16"/>
+<connect gate="G$1" pin="(SS!)PC4" pad="12"/>
+<connect gate="G$1" pin="(T0)PD4" pad="24"/>
+<connect gate="G$1" pin="(T1)PD5" pad="23"/>
+<connect gate="G$1" pin="(TXD)PD1" pad="27"/>
+<connect gate="G$1" pin="AVCC" pad="32"/>
+<connect gate="G$1" pin="GND" pad="1 18"/>
+<connect gate="G$1" pin="PA0(ADC0)" pad="6"/>
+<connect gate="G$1" pin="PA1(ADC1)" pad="5"/>
+<connect gate="G$1" pin="PA2(ADC2)" pad="4"/>
+<connect gate="G$1" pin="PA3(ADC3)" pad="3"/>
+<connect gate="G$1" pin="PA4(ADC4)" pad="2"/>
+<connect gate="G$1" pin="PA5(ADC5)" pad="31"/>
+<connect gate="G$1" pin="PA6(ADC6)" pad="30"/>
+<connect gate="G$1" pin="PA7(ADC7)" pad="29"/>
+<connect gate="G$1" pin="PC2" pad="14"/>
+<connect gate="G$1" pin="PC3" pad="13"/>
+<connect gate="G$1" pin="PDI(DATA)" pad="7"/>
+<connect gate="G$1" pin="PR0" pad="20"/>
+<connect gate="G$1" pin="PR1" pad="19"/>
+<connect gate="G$1" pin="RESET/PDI(CLK)" pad="8"/>
+<connect gate="G$1" pin="VCC" pad="17"/>
 </connects>
 <technologies>
 <technology name="">
