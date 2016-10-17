@@ -1,0 +1,7 @@
+Part	Manufacturer	Part Number	Quantity	Price	Attribute 1 Name	Attribute 1 Value	Attribute 2 Name	Attribute 2 Value	Attribute 3 Name	Attribute 3 Value	Footprint
+"Cin"	"Taiyo Yuden"	"LMK212BJ106KG-T"	"1"	"0.03"	""	""	""	""	""	""	"0805"
+"Cout"	"Taiyo Yuden"	"LMK212BJ226MG-T"	"2"	"0.12"	""	""	""	""	""	""	"0805"
+"L1"	"MuRata"	"LQM21PN1R5MC0D"	"1"	"0.04"	"L"	"1.5uH"	"DCR"	"0.26Ohm"	"IDC"	"0.7A"	"0805"
+"Rfbb"	"Vishay-Dale"	"CRCW0402178KFKED"	"1"	"0.01"	"Resistance"	"178kOhm"	"Tolerance"	"1%"	"Power"	"0.063W"	"0402"
+"Rfbt"	"Vishay-Dale"	"CRCW04021M00FKED"	"1"	"0.01"	"Resistance"	"1000kOhm"	"Tolerance"	"1%"	"Power"	"0.063W"	"0402"
+"U1"	"Texas Instruments"	"TPS63000DRCR"	"1"	"0.85"	""	""	""	""	""	""	"DRC0010J"
