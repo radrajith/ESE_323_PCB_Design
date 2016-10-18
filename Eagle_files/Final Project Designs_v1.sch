@@ -152,7 +152,7 @@
 <pad name="P$4" x="0" y="-2" drill="1" diameter="1.778"/>
 <pad name="P$1" x="0" y="-4" drill="1" diameter="1.778"/>
 <pad name="P$3" x="0" y="-6" drill="1" diameter="1.778"/>
-<text x="-2.54" y="2.54" size="1.27" layer="21">RGB LCD</text>
+<text x="-2.54" y="2.54" size="1.27" layer="25">RGB LCD</text>
 <text x="1.5" y="-2" size="1.27" layer="21">vcc</text>
 <text x="1.5" y="-4" size="1.27" layer="21">sda</text>
 <text x="1.5" y="-6" size="1.27" layer="21">scl</text>
@@ -379,15 +379,15 @@
 <wire x1="-1.27" y1="-1.27" x2="-1.27" y2="34.29" width="0.127" layer="21"/>
 <wire x1="1.27" y1="-1.27" x2="1.27" y2="34.29" width="0.127" layer="21"/>
 <wire x1="0" y1="-4.85" x2="-2" y2="-4.85" width="0.127" layer="21"/>
-<wire x1="-2" y1="-4.85" x2="-2" y2="37.87" width="0.127" layer="21"/>
-<wire x1="-2" y1="37.87" x2="77.18" y2="37.87" width="0.127" layer="21"/>
-<wire x1="77.18" y1="37.88" x2="77.18" y2="-4.85" width="0.127" layer="21"/>
-<wire x1="77.18" y1="-4.85" x2="-0.25" y2="-4.85" width="0.127" layer="21"/>
+<wire x1="-2" y1="-4.85" x2="-2" y2="37.87" width="0.127" layer="20"/>
+<wire x1="-2" y1="37.87" x2="77.18" y2="37.87" width="0.127" layer="20"/>
+<wire x1="77.18" y1="37.88" x2="77.18" y2="-4.85" width="0.127" layer="20"/>
+<wire x1="77.18" y1="-4.85" x2="-0.25" y2="-4.85" width="0.127" layer="20"/>
 <wire x1="-0.25" y1="-4.85" x2="-0.25" y2="-4.88" width="0.127" layer="21"/>
-<circle x="4.93" y="-1.83" radius="1.623359375" width="0.127" layer="21"/>
-<circle x="4.92" y="34.85" radius="1.51330625" width="0.127" layer="21"/>
-<circle x="74.28" y="35.2" radius="1.51330625" width="0.127" layer="21"/>
-<circle x="74.07" y="-1.92" radius="1.51330625" width="0.127" layer="21"/>
+<circle x="4.93" y="-1.83" radius="1.623359375" width="0.127" layer="45"/>
+<circle x="4.92" y="34.85" radius="1.51330625" width="0.127" layer="45"/>
+<circle x="74.28" y="35.2" radius="1.51330625" width="0.127" layer="45"/>
+<circle x="74.07" y="-1.92" radius="1.51330625" width="0.127" layer="45"/>
 </package>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
@@ -473,6 +473,14 @@
 <wire x1="-6.858" y1="5.08" x2="5.08" y2="5.08" width="0.127" layer="1"/>
 <wire x1="5.08" y1="5.08" x2="5.08" y2="-6.35" width="0.127" layer="1"/>
 <wire x1="5.08" y1="-6.35" x2="-6.858" y2="-6.35" width="0.127" layer="1"/>
+</package>
+<package name="BANANA_PLUG">
+<pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
+<pad name="P$2" x="5.08" y="0" drill="1.3208" shape="square"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="1"/>
+<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="1"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="1"/>
+<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -606,6 +614,13 @@
 <text x="-3.81" y="6.35" size="1.778" layer="94">V+</text>
 <text x="-3.81" y="-6.35" size="1.778" layer="94">V-</text>
 </symbol>
+<symbol name="BANANA_PLUG">
+<pin name="BP" x="0" y="0" visible="pin" length="middle"/>
+<wire x1="2.54" y1="2.54" x2="12.7" y2="2.54" width="0.254" layer="94"/>
+<wire x1="12.7" y1="2.54" x2="12.7" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="4PIN_GROVE_CONNECTOR">
@@ -727,6 +742,21 @@ UART&lt;p&gt;
 <connect gate="G$1" pin="I_OUT" pad="I_OUT"/>
 <connect gate="G$1" pin="V+" pad="V+"/>
 <connect gate="G$1" pin="V-" pad="V-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BANANA_PLUG">
+<gates>
+<gate name="G$1" symbol="BANANA_PLUG" x="-10.16" y="0"/>
+</gates>
+<devices>
+<device name="" package="BANANA_PLUG">
+<connects>
+<connect gate="G$1" pin="BP" pad="P$1 P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1153,6 +1183,50 @@ Based on  the following source:
 </deviceset>
 </devicesets>
 </library>
+<library name="fuse_smt">
+<packages>
+<package name="FUSE_SMT">
+<smd name="P$1" x="2.8" y="2.3" dx="5.55" dy="4.65" layer="1"/>
+<smd name="P$2" x="-10" y="2.3" dx="5.55" dy="4.65" layer="1"/>
+<wire x1="-13.3" y1="-0.5" x2="-13.3" y2="5.1" width="0.127" layer="1"/>
+<wire x1="-13.3" y1="5.1" x2="6.2" y2="5.1" width="0.127" layer="1"/>
+<wire x1="6.2" y1="5.1" x2="6.2" y2="-0.5" width="0.127" layer="1"/>
+<wire x1="6.2" y1="-0.5" x2="-13.3" y2="-0.5" width="0.127" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="FUSE_SMT">
+<pin name="P$1" x="10.16" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="P$2" x="-12.7" y="0" visible="off" length="middle"/>
+<wire x1="-7.62" y1="0" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-2.54" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<text x="-5.08" y="2.54" size="1.778" layer="94">Fuse</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FUSE_SMT">
+<gates>
+<gate name="G$1" symbol="FUSE_SMT" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="FUSE_SMT">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1179,6 +1253,9 @@ Based on  the following source:
 <part name="SW1" library="buttons" deviceset="10-XX" device="-4.5SMD"/>
 <part name="SW2" library="buttons" deviceset="10-XX" device="-4.5SMD"/>
 <part name="U$2" library="Tft_lcd_header" deviceset="RESISTOR_4PIN" device=""/>
+<part name="U$3" library="Tft_lcd_header" deviceset="BANANA_PLUG" device=""/>
+<part name="U$4" library="Tft_lcd_header" deviceset="BANANA_PLUG" device=""/>
+<part name="U$5" library="fuse_smt" deviceset="FUSE_SMT" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1206,6 +1283,9 @@ Based on  the following source:
 <instance part="SW1" gate="1" x="45.72" y="96.52"/>
 <instance part="SW2" gate="1" x="45.72" y="83.82"/>
 <instance part="U$2" gate="G$1" x="119.38" y="66.04" smashed="yes"/>
+<instance part="U$3" gate="G$1" x="134.62" y="25.4"/>
+<instance part="U$4" gate="G$1" x="134.62" y="106.68"/>
+<instance part="U$5" gate="G$1" x="119.38" y="38.1" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -1229,6 +1309,7 @@ Based on  the following source:
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
 <wire x1="93.98" y1="43.18" x2="109.22" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="43.18" x2="109.22" y2="50.8" width="0.1524" layer="91"/>
+<junction x="93.98" y="43.18"/>
 </segment>
 <segment>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
@@ -1243,6 +1324,7 @@ Based on  the following source:
 <wire x1="38.1" y1="93.98" x2="40.64" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="SW1" gate="1" pin="P1"/>
 <pinref part="SW2" gate="1" pin="P1"/>
+<junction x="38.1" y="93.98"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1353,22 +1435,16 @@ Based on  the following source:
 <junction x="134.62" y="45.72"/>
 </segment>
 </net>
-<net name="N$12" class="0">
+<net name="B$1" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="VBUS"/>
 <wire x1="134.62" y1="91.44" x2="119.38" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="91.44" x2="119.38" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="I_IN"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="1"/>
-<wire x1="134.62" y1="40.64" x2="119.38" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="40.64" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="I_OUT"/>
-<wire x1="119.38" y1="53.34" x2="119.38" y2="55.88" width="0.1524" layer="91"/>
-<junction x="119.38" y="53.34"/>
+<wire x1="119.38" y1="91.44" x2="119.38" y2="106.68" width="0.1524" layer="91"/>
+<junction x="119.38" y="91.44"/>
+<pinref part="U$4" gate="G$1" pin="BP"/>
+<wire x1="134.62" y1="106.68" x2="119.38" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -1386,6 +1462,26 @@ Based on  the following source:
 <wire x1="93.98" y1="60.96" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="60.96" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="60.96" x2="111.76" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="I_OUT"/>
+<wire x1="119.38" y1="48.26" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="P$1"/>
+</segment>
+</net>
+<net name="B$2" class="0">
+<segment>
+<wire x1="119.38" y1="22.86" x2="132.08" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="22.86" x2="132.08" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="25.4" x2="132.08" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="40.64" x2="137.16" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="25.4" x2="119.38" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="P$2"/>
+<pinref part="U$3" gate="G$1" pin="BP"/>
+<wire x1="134.62" y1="25.4" x2="132.08" y2="25.4" width="0.1524" layer="91"/>
+<junction x="132.08" y="25.4"/>
 </segment>
 </net>
 </nets>

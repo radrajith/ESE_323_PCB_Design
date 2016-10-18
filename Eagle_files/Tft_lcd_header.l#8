@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -382,10 +382,14 @@
 <rectangle x1="-3.0286" y1="3.556" x2="-2.5714" y2="4.5466" layer="51"/>
 </package>
 <package name="RESISTOR_4PIN">
-<smd name="P$1" x="2.13" y="0.84" dx="4.27" dy="1.68" layer="1"/>
-<smd name="P$2" x="-4.02" y="0.84" dx="4.27" dy="1.68" layer="1"/>
-<smd name="P$3" x="2.13" y="-4.42" dx="4.27" dy="7.62" layer="1"/>
-<smd name="P$4" x="-4.02" y="-4.42" dx="4.27" dy="7.62" layer="1"/>
+<smd name="V-" x="2.13" y="3.38" dx="4.27" dy="1.68" layer="1"/>
+<smd name="V+" x="-4.02" y="3.38" dx="4.27" dy="1.68" layer="1"/>
+<smd name="I_OUT" x="2.13" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
+<smd name="I_IN" x="-4.02" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
+<wire x1="-6.858" y1="-6.35" x2="-6.858" y2="5.08" width="0.127" layer="1"/>
+<wire x1="-6.858" y1="5.08" x2="5.08" y2="5.08" width="0.127" layer="1"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="-6.35" width="0.127" layer="1"/>
+<wire x1="5.08" y1="-6.35" x2="-6.858" y2="-6.35" width="0.127" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -645,6 +649,18 @@ UART&lt;p&gt;
 <attribute name="OC_FARNELL" value="unknown" constant="no"/>
 <attribute name="OC_NEWARK" value="unknown" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RESISTOR_4PIN">
+<gates>
+<gate name="G$1" symbol="RESISTOR_4PIN" x="27.94" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="RESISTOR_4PIN">
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>

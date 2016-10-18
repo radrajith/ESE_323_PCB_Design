@@ -474,8 +474,8 @@
 <part name="VOUT" library="sps" deviceset="TP-1502" device=""/>
 <part name="GND1" library="sps" deviceset="TP-1502" device=""/>
 <part name="CIN" library="sps" deviceset="LMK212BJ106KG-T" device="" value="10uF"/>
-<part name="VOUT_1" library="sps" deviceset="LMK212BJ226MG-T" device="" value="22uF"/>
-<part name="VOUT_2" library="sps" deviceset="LMK212BJ226MG-T" device="" value="22uF"/>
+<part name="COUT_1" library="sps" deviceset="LMK212BJ226MG-T" device="" value="22uF"/>
+<part name="COUT_2" library="sps" deviceset="LMK212BJ226MG-T" device="" value="22uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -510,11 +510,11 @@
 <attribute name="NAME" x="53.6956" y="59.9186" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="53.0606" y="64.9986" size="2.0828" layer="96" ratio="6" rot="SR0"/>
 </instance>
-<instance part="VOUT_1" gate="A" x="149.86" y="63.5" smashed="yes" rot="R90">
+<instance part="COUT_1" gate="A" x="149.86" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="162.2044" y="67.0814" size="2.0828" layer="95" ratio="6" rot="SR180"/>
 <attribute name="VALUE" x="160.2994" y="62.0014" size="2.0828" layer="96" ratio="6" rot="SR180"/>
 </instance>
-<instance part="VOUT_2" gate="A" x="167.64" y="63.5" smashed="yes" rot="R90">
+<instance part="COUT_2" gate="A" x="167.64" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="182.5244" y="67.0814" size="2.0828" layer="95" ratio="6" rot="SR180"/>
 <attribute name="VALUE" x="178.0794" y="62.0014" size="2.0828" layer="96" ratio="6" rot="SR180"/>
 </instance>
@@ -572,9 +572,9 @@
 <junction x="149.86" y="30.48"/>
 <label x="182.88" y="30.48" size="1.778" layer="95"/>
 <pinref part="GND1" gate="A" pin="TP"/>
-<pinref part="VOUT_1" gate="A" pin="2"/>
+<pinref part="COUT_1" gate="A" pin="2"/>
 <junction x="149.86" y="55.88"/>
-<pinref part="VOUT_2" gate="A" pin="2"/>
+<pinref part="COUT_2" gate="A" pin="2"/>
 </segment>
 </net>
 <net name="VOUT" class="0">
@@ -591,9 +591,9 @@
 <junction x="127" y="86.36"/>
 <label x="185.42" y="86.36" size="1.778" layer="95"/>
 <pinref part="VOUT" gate="A" pin="TP"/>
-<pinref part="VOUT_1" gate="A" pin="1"/>
+<pinref part="COUT_1" gate="A" pin="1"/>
 <junction x="149.86" y="71.12"/>
-<pinref part="VOUT_2" gate="A" pin="1"/>
+<pinref part="COUT_2" gate="A" pin="1"/>
 </segment>
 </net>
 <net name="2" class="0">
