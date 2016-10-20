@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -43,6 +43,7 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -54,6 +55,24 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
+<layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
+<layer number="102" name="bot_pads" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="104" name="S_DOKU" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="105" name="Beschreib" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="106" name="BGA-Top" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="107" name="BD-Top" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="no" active="no"/>
+<layer number="201" name="201bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
+<layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <library>
 <packages>
@@ -382,14 +401,16 @@
 <rectangle x1="-3.0286" y1="3.556" x2="-2.5714" y2="4.5466" layer="51"/>
 </package>
 <package name="RESISTOR_4PIN">
-<smd name="V-" x="2.13" y="3.38" dx="4.27" dy="1.68" layer="1"/>
-<smd name="V+" x="-4.02" y="3.38" dx="4.27" dy="1.68" layer="1"/>
-<smd name="I_OUT" x="2.13" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
-<smd name="I_IN" x="-4.02" y="-1.88" dx="4.27" dy="7.62" layer="1"/>
-<wire x1="-6.858" y1="-6.35" x2="-6.858" y2="5.08" width="0.127" layer="1"/>
-<wire x1="-6.858" y1="5.08" x2="5.08" y2="5.08" width="0.127" layer="1"/>
-<wire x1="5.08" y1="5.08" x2="5.08" y2="-6.35" width="0.127" layer="1"/>
-<wire x1="5.08" y1="-6.35" x2="-6.858" y2="-6.35" width="0.127" layer="1"/>
+<smd name="V-" x="1.13" y="0.88" dx="2.35" dy="0.7" layer="1"/>
+<smd name="V+" x="-3.12" y="0.88" dx="2.35" dy="0.7" layer="1"/>
+<smd name="I_OUT" x="1.13" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
+<smd name="I_IN" x="-3.12" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
+<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="1"/>
+<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="1"/>
+<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="1"/>
+<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="1"/>
+<text x="-5.5" y="-0.3" size="1.27" layer="21">+</text>
+<text x="2.4" y="-0.3" size="1.27" layer="21">-</text>
 </package>
 <package name="BANANA_PLUG">
 <pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
@@ -398,6 +419,48 @@
 <wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="1"/>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="1"/>
 <wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="1"/>
+</package>
+<package name="JTAG">
+<wire x1="-6.35" y1="1.905" x2="-3.81" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="1.905" x2="-3.81" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="4.445" x2="-6.35" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="4.445" x2="-6.35" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="10.795" x2="-5.08" y2="5.08" width="0.762" layer="21"/>
+<wire x1="-3.81" y1="1.905" x2="-1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.905" x2="-1.27" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="4.445" x2="-3.81" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="10.795" x2="-2.54" y2="5.08" width="0.762" layer="21"/>
+<wire x1="-1.27" y1="1.905" x2="1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="1.905" x2="1.27" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="4.445" x2="-1.27" y2="4.445" width="0.1524" layer="21"/>
+<wire x1="0" y1="10.795" x2="0" y2="5.08" width="0.762" layer="21"/>
+<pad name="DATA" x="-5.08" y="-2.54" drill="1.016" shape="octagon"/>
+<pad name="VCC" x="-5.08" y="0" drill="1.016" shape="octagon"/>
+<pad name="NC" x="-2.54" y="-2.54" drill="1.016" shape="octagon"/>
+<pad name="NC1" x="-2.54" y="0" drill="1.016" shape="octagon"/>
+<pad name="CLK" x="0" y="-2.54" drill="1.016" shape="octagon"/>
+<pad name="GND" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-6.985" y="0" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<rectangle x1="-5.461" y1="4.445" x2="-4.699" y2="4.953" layer="21"/>
+<rectangle x1="-2.921" y1="4.445" x2="-2.159" y2="4.953" layer="21"/>
+<rectangle x1="-0.381" y1="4.445" x2="0.381" y2="4.953" layer="21"/>
+<rectangle x1="-5.461" y1="0.889" x2="-4.699" y2="1.905" layer="21"/>
+<rectangle x1="-2.921" y1="0.889" x2="-2.159" y2="1.905" layer="21"/>
+<rectangle x1="-5.461" y1="-1.651" x2="-4.699" y2="-0.889" layer="21"/>
+<rectangle x1="-2.921" y1="-1.651" x2="-2.159" y2="-0.889" layer="21"/>
+<rectangle x1="-0.381" y1="0.889" x2="0.381" y2="1.905" layer="21"/>
+<rectangle x1="-0.381" y1="-1.651" x2="0.381" y2="-0.889" layer="21"/>
+<text x="-7.62" y="-3.81" size="1.27" layer="21">1</text>
+<text x="1.27" y="0" size="1.27" layer="21">6</text>
+</package>
+<package name="RESISTOR">
+<smd name="1" x="-0.15" y="0.28" dx="0.3" dy="0.55" layer="1"/>
+<smd name="2" x="-1.15" y="0.28" dx="0.3" dy="0.55" layer="1"/>
+<text x="-0.82" y="0.19" size="0.254" layer="1">1k</text>
+<wire x1="-1.53" y1="-0.14" x2="-1.53" y2="0.66" width="0.127" layer="1"/>
+<wire x1="-1.53" y1="0.66" x2="0.18" y2="0.66" width="0.127" layer="1"/>
+<wire x1="0.19" y1="0.65" x2="0.19" y2="-0.14" width="0.127" layer="1"/>
+<wire x1="0.19" y1="-0.14" x2="-1.53" y2="-0.14" width="0.127" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -552,11 +615,33 @@
 <text x="-3.81" y="-6.35" size="1.778" layer="94">V-</text>
 </symbol>
 <symbol name="BANANA_PLUG">
-<pin name="P$1" x="0" y="0" length="middle"/>
+<pin name="BP" x="0" y="0" visible="pin" length="middle"/>
 <wire x1="2.54" y1="2.54" x2="12.7" y2="2.54" width="0.254" layer="94"/>
 <wire x1="12.7" y1="2.54" x2="12.7" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+</symbol>
+<symbol name="JTAG">
+<pin name="DATA" x="5.08" y="12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="NC" x="5.08" y="10.16" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="CLK" x="5.08" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="VCC" x="5.08" y="5.08" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<pin name="NC_1" x="5.08" y="2.54" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="GND" x="5.08" y="0" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<wire x1="0" y1="-2.54" x2="0" y2="15.24" width="0.254" layer="94"/>
+<wire x1="0" y1="15.24" x2="-7.62" y2="15.24" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="15.24" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+</symbol>
+<symbol name="RESISTOR">
+<pin name="P$1" x="0" y="5.08" visible="pad" length="short" rot="R270"/>
+<pin name="P$2" x="0" y="-10.16" visible="pad" length="short" rot="R90"/>
+<wire x1="0" y1="2.54" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="1.27" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="0" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="0" y1="-6.35" x2="0" y2="-8.89" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -693,7 +778,43 @@ UART&lt;p&gt;
 <devices>
 <device name="" package="BANANA_PLUG">
 <connects>
-<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+<connect gate="G$1" pin="BP" pad="P$1 P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JTAG">
+<gates>
+<gate name="A" symbol="JTAG" x="2.54" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="JTAG">
+<connects>
+<connect gate="A" pin="CLK" pad="CLK"/>
+<connect gate="A" pin="DATA" pad="DATA"/>
+<connect gate="A" pin="GND" pad="GND"/>
+<connect gate="A" pin="NC" pad="NC"/>
+<connect gate="A" pin="NC_1" pad="NC1"/>
+<connect gate="A" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RESISTOR">
+<gates>
+<gate name="A" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RESISTOR">
+<connects>
+<connect gate="A" pin="P$1" pad="1"/>
+<connect gate="A" pin="P$2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>

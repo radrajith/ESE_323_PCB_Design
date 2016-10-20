@@ -521,19 +521,35 @@
 <pinref part="U1" gate="1" pin="PS_SYNC@7"/>
 <pinref part="U1" gate="1" pin="VINA@8"/>
 <pinref part="VIN" gate="1" pin="+@1"/>
-<wire x1="63.5" y1="68.58" x2="63.5" y2="86.36" width="0" layer="91"/>
+<wire x1="63.5" y1="68.58" x2="63.5" y2="76.2" width="0" layer="91"/>
+<wire x1="63.5" y1="76.2" x2="63.5" y2="81.28" width="0" layer="91"/>
+<wire x1="63.5" y1="81.28" x2="63.5" y2="86.36" width="0" layer="91"/>
 <wire x1="68.58" y1="68.58" x2="63.5" y2="68.58" width="0" layer="91"/>
 <wire x1="68.58" y1="76.2" x2="63.5" y2="76.2" width="0" layer="91"/>
 <wire x1="68.58" y1="81.28" x2="63.5" y2="81.28" width="0" layer="91"/>
 <wire x1="48.26" y1="69.85" x2="48.26" y2="86.36" width="0" layer="91"/>
-<wire x1="30.48" y1="86.36" x2="68.58" y2="86.36" width="0" layer="91"/>
+<wire x1="30.48" y1="86.36" x2="48.26" y2="86.36" width="0" layer="91"/>
+<wire x1="48.26" y1="86.36" x2="63.5" y2="86.36" width="0" layer="91"/>
+<wire x1="63.5" y1="86.36" x2="68.58" y2="86.36" width="0" layer="91"/>
 <wire x1="30.48" y1="73.66" x2="30.48" y2="86.36" width="0" layer="91"/>
 </segment>
 </net>
 <net name="GND1" class="0">
 <segment>
 <pinref part="U1" gate="1" pin="GND@9"/>
-<wire x1="109.22" y1="66.04" x2="109.22" y2="30.48" width="0" layer="91"/>
+<wire x1="109.22" y1="66.04" x2="109.22" y2="60.96" width="0" layer="91"/>
+<pinref part="GND" gate="1" pin="1@1"/>
+<pinref part="U1" gate="1" pin="PGND@3"/>
+<pinref part="U1" gate="1" pin="PAD@11"/>
+<pinref part="VIN" gate="1" pin="-@2"/>
+<wire x1="109.22" y1="58.42" x2="109.22" y2="30.48" width="0" layer="91"/>
+<wire x1="30.48" y1="30.48" x2="109.22" y2="30.48" width="0" layer="91"/>
+<wire x1="109.22" y1="30.48" x2="190.5" y2="30.48" width="0" layer="91"/>
+<wire x1="30.48" y1="30.48" x2="30.48" y2="58.42" width="0" layer="91"/>
+<label x="165.1" y="25.4" size="1.778" layer="95"/>
+<pinref part="GND1" gate="A" pin="TP"/>
+<wire x1="109.22" y1="60.96" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="58.42" x2="109.22" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="CIN" gate="1" pin="2@2"/>
@@ -544,16 +560,6 @@
 <pinref part="COUT_1" gate="1" pin="2@2"/>
 <wire x1="149.86" y1="55.88" x2="167.64" y2="55.88" width="0" layer="91"/>
 <wire x1="149.86" y1="55.88" x2="149.86" y2="30.48" width="0" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND" gate="1" pin="1@1"/>
-<pinref part="U1" gate="1" pin="PGND@3"/>
-<pinref part="U1" gate="1" pin="PAD@11"/>
-<pinref part="VIN" gate="1" pin="-@2"/>
-<wire x1="30.48" y1="30.48" x2="190.5" y2="30.48" width="0" layer="91"/>
-<wire x1="30.48" y1="30.48" x2="30.48" y2="58.42" width="0" layer="91"/>
-<label x="165.1" y="25.4" size="1.778" layer="95"/>
-<pinref part="GND1" gate="A" pin="TP"/>
 </segment>
 </net>
 <net name="VOUT" class="0">

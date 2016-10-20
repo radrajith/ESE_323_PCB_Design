@@ -6,46 +6,8 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="no" active="no"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="no"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="no"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -62,9 +24,6 @@
 <package name="0805">
 <pad name="1" x="-0.9017" y="0" drill="0"/>
 <pad name="2" x="0.9017" y="0" drill="0"/>
-</package>
-<package name="WB_GND">
-<pad name="1" x="0" y="0" drill="0"/>
 </package>
 <package name="0402">
 <pad name="1" x="-0.4191" y="0" drill="0"/>
@@ -83,6 +42,13 @@
 <pad name="10" x="1.4" y="1" drill="0"/>
 <pad name="11" x="0" y="0" drill="0"/>
 </package>
+<package name="WB_LOAD_RESISTOR">
+<pad name="1" x="0" y="0" drill="0"/>
+<pad name="2" x="0" y="0" drill="0"/>
+</package>
+<package name="WB_GND">
+<pad name="1" x="0" y="0" drill="0"/>
+</package>
 <package name="WB_STARTUP_VOLTAGE_SOURCE">
 <pad name="1" x="0" y="0" drill="0"/>
 <pad name="2" x="0" y="0" drill="0"/>
@@ -100,6 +66,20 @@
 <wire x1="-0.762" y1="-3.048" x2="-0.762" y2="3.048" width="0.1524" layer="94"/>
 <text x="0" y="7.62" size="2" layer="95" align="center">&gt;NAME</text>
 <text x="0" y="5.08" size="2" layer="96" align="center">&gt;VALUE</text>
+</symbol>
+<symbol name="WB_LOAD_RESISTOR@1">
+<pin name="1@1" x="7.62" y="0" visible="off" length="short" direction="pas" rot="MR0"/>
+<pin name="2@2" x="-7.62" y="0" visible="off" length="short" direction="pas" rot="MR180"/>
+<wire x1="7.62" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="0" x2="3.81" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="3.81" y1="1.524" x2="1.905" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.905" y1="-1.524" x2="0" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="0" y1="1.524" x2="-1.905" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="-1.905" y1="-1.524" x2="-3.81" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="-3.81" y1="1.524" x2="-5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.1524" layer="94"/>
+<text x="0" y="5.08" size="2" layer="95" align="center">&gt;NAME</text>
+<text x="0" y="3.175" size="2" layer="96" align="center">&gt;VALUE</text>
 </symbol>
 <symbol name="WB_GND@1">
 <pin name="1@1" x="0" y="2.54" visible="off" length="short" direction="pas" rot="MR270"/>
@@ -230,6 +210,27 @@
 <attribute name="MANUFACTURER_PART_NUMBER" value="LMK212BJ106KG-T" constant="no"/>
 <attribute name="VDC" value="10.0" constant="no"/>
 <attribute name="VENDOR" value="Taiyo Yuden" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WB_LOAD_RESISTOR">
+<gates>
+<gate name="1" symbol="WB_LOAD_RESISTOR@1" x="0" y="0" addlevel="always"/>
+</gates>
+<devices>
+<device name="WB_LOAD_RESISTOR" package="WB_LOAD_RESISTOR">
+<connects>
+<connect gate="1" pin="1@1" pad="1"/>
+<connect gate="1" pin="2@2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER_NAME" value="WB_LOAD_RESISTOR" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="WB_LOAD_RESISTOR" constant="no"/>
+<attribute name="POWERPORTTYPE" value="POWER_GROUND" constant="no"/>
+<attribute name="VALUE" value="Value" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -409,43 +410,6 @@
 </deviceset>
 </devicesets>
 </library>
-<library name="sps">
-<packages>
-<package name="TP-1502">
-<pad name="1" x="0" y="0" drill="0.8128" diameter="1.651"/>
-<text x="-2.8702" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-3.2766" y="-0.635" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
-</package>
-</packages>
-<symbols>
-<symbol name="TP-1502">
-<pin name="TP" x="0" y="0" direction="pas" rot="R180"/>
-<wire x1="-38.1" y1="5.08" x2="-38.1" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="-38.1" y1="-5.08" x2="-7.62" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="5.08" x2="-38.1" y2="5.08" width="0.1524" layer="94"/>
-<text x="-27.5844" y="9.1186" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-28.2194" y="6.5786" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="TP-1502">
-<gates>
-<gate name="A" symbol="TP-1502" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="TP-1502">
-<connects>
-<connect gate="A" pin="TP" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -457,16 +421,15 @@
 </classes>
 <parts>
 <part name="CIN" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ106KG-T" device="LMK212BJ106KG-T" value="10uF"/>
-<part name="COUT_1" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ226MG-T" device="LMK212BJ226MG-T" value="22uF"/>
+<part name="COUT" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ226MG-T" device="LMK212BJ226MG-T" value="22uF"/>
 <part name="GND" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
 <part name="L1" library="AcceleratedDesigns_Lib" deviceset="LQM21PN1R5MC0D" device="LQM21PN1R5MC0D" value="1.5uH"/>
 <part name="RFBB" library="AcceleratedDesigns_Lib" deviceset="CRCW0402178KFKED" device="CRCW0402178KFKED" value="178k"/>
 <part name="RFBT" library="AcceleratedDesigns_Lib" deviceset="CRCW04021M00FKED" device="CRCW04021M00FKED" value="1M"/>
 <part name="U1" library="AcceleratedDesigns_Lib" deviceset="TPS63000DRCR" device="TPS63000DRCR" value="TPS63000DRCR"/>
 <part name="VIN" library="AcceleratedDesigns_Lib" deviceset="WB_STARTUP_VOLTAGE_SOURCE" device="WB_STARTUP_VOLTAGE_SOURCE" value="WB_STARTUP_VOLTAGE_SOURCE"/>
+<part name="RLOAD" library="AcceleratedDesigns_Lib" deviceset="WB_LOAD_RESISTOR" device="WB_LOAD_RESISTOR" value="WB_LOAD_RESISTOR"/>
 <part name="COUT_2" library="AcceleratedDesigns_Lib" deviceset="LMK212BJ226MG-T" device="LMK212BJ226MG-T" value="22uF"/>
-<part name="VOUT" library="sps" deviceset="TP-1502" device=""/>
-<part name="GND1" library="sps" deviceset="TP-1502" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -477,7 +440,7 @@
 <attribute name="NAME" x="51.308" y="66.548" size="2" layer="95"/>
 <attribute name="VALUE" x="51.308" y="61.976" size="2" layer="96"/>
 </instance>
-<instance part="COUT_1" gate="1" x="149.86" y="63.5" smashed="yes" rot="R90">
+<instance part="COUT" gate="1" x="149.86" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="152.908" y="67.818" size="2" layer="95"/>
 <attribute name="VALUE" x="152.908" y="63.246" size="2" layer="96"/>
 </instance>
@@ -503,12 +466,13 @@
 <instance part="VIN" gate="1" x="30.48" y="66.04" smashed="yes" rot="R270">
 <attribute name="NAME" x="35.052" y="71.882" size="2" layer="95"/>
 </instance>
+<instance part="RLOAD" gate="1" x="190.5" y="48.26" smashed="yes" rot="R90">
+<attribute name="NAME" x="192.024" y="51.054" size="2" layer="95"/>
+</instance>
 <instance part="COUT_2" gate="1" x="167.64" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="170.688" y="67.818" size="2" layer="95"/>
 <attribute name="VALUE" x="170.688" y="63.246" size="2" layer="96"/>
 </instance>
-<instance part="VOUT" gate="A" x="190.5" y="86.36" rot="R180"/>
-<instance part="GND1" gate="A" x="190.5" y="30.48" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -530,44 +494,40 @@
 <wire x1="30.48" y1="73.66" x2="30.48" y2="86.36" width="0" layer="91"/>
 </segment>
 </net>
-<net name="GND1" class="0">
-<segment>
-<pinref part="U1" gate="1" pin="GND@9"/>
-<wire x1="109.22" y1="66.04" x2="109.22" y2="30.48" width="0" layer="91"/>
-</segment>
+<net name="0" class="0">
 <segment>
 <pinref part="CIN" gate="1" pin="2@2"/>
-<wire x1="48.26" y1="54.61" x2="48.26" y2="30.48" width="0" layer="91"/>
-</segment>
-<segment>
-<pinref part="COUT_2" gate="1" pin="2@2"/>
-<pinref part="COUT_1" gate="1" pin="2@2"/>
-<wire x1="149.86" y1="55.88" x2="167.64" y2="55.88" width="0" layer="91"/>
-<wire x1="149.86" y1="55.88" x2="149.86" y2="30.48" width="0" layer="91"/>
-</segment>
-<segment>
+<pinref part="COUT" gate="1" pin="2@2"/>
 <pinref part="GND" gate="1" pin="1@1"/>
+<pinref part="RFBB" gate="1" pin="2@2"/>
 <pinref part="U1" gate="1" pin="PGND@3"/>
+<pinref part="U1" gate="1" pin="GND@9"/>
 <pinref part="U1" gate="1" pin="PAD@11"/>
 <pinref part="VIN" gate="1" pin="-@2"/>
+<pinref part="RLOAD" gate="1" pin="2@2"/>
+<pinref part="COUT_2" gate="1" pin="2@2"/>
+<wire x1="48.26" y1="54.61" x2="48.26" y2="30.48" width="0" layer="91"/>
+<wire x1="109.22" y1="66.04" x2="109.22" y2="30.48" width="0" layer="91"/>
+<wire x1="127" y1="35.56" x2="127" y2="30.48" width="0" layer="91"/>
+<wire x1="149.86" y1="55.88" x2="149.86" y2="30.48" width="0" layer="91"/>
 <wire x1="30.48" y1="30.48" x2="190.5" y2="30.48" width="0" layer="91"/>
 <wire x1="30.48" y1="30.48" x2="30.48" y2="58.42" width="0" layer="91"/>
-<label x="165.1" y="25.4" size="1.778" layer="95"/>
-<pinref part="GND1" gate="A" pin="TP"/>
+<wire x1="190.5" y1="30.48" x2="190.5" y2="40.64" width="0" layer="91"/>
+<wire x1="149.86" y1="55.88" x2="167.64" y2="55.88" width="0" layer="91"/>
 </segment>
 </net>
-<net name="VOUT" class="0">
+<net name="6" class="0">
 <segment>
-<pinref part="COUT_2" gate="1" pin="1@1"/>
-<pinref part="COUT_1" gate="1" pin="1@1"/>
-<wire x1="149.86" y1="71.12" x2="149.86" y2="86.36" width="0" layer="91"/>
-<wire x1="149.86" y1="71.12" x2="167.64" y2="71.12" width="0" layer="91"/>
-</segment>
-<segment>
+<pinref part="COUT" gate="1" pin="1@1"/>
+<pinref part="RFBT" gate="1" pin="1@1"/>
 <pinref part="U1" gate="1" pin="VOUT@1"/>
+<pinref part="RLOAD" gate="1" pin="1@1"/>
+<pinref part="COUT_2" gate="1" pin="1@1"/>
+<wire x1="127" y1="83.82" x2="127" y2="86.36" width="0" layer="91"/>
+<wire x1="149.86" y1="71.12" x2="149.86" y2="86.36" width="0" layer="91"/>
 <wire x1="109.22" y1="86.36" x2="190.5" y2="86.36" width="0" layer="91"/>
-<label x="162.56" y="88.9" size="1.778" layer="95"/>
-<pinref part="VOUT" gate="A" pin="TP"/>
+<wire x1="190.5" y1="55.88" x2="190.5" y2="86.36" width="0" layer="91"/>
+<wire x1="149.86" y1="71.12" x2="167.64" y2="71.12" width="0" layer="91"/>
 </segment>
 </net>
 <net name="2" class="0">
@@ -597,18 +557,6 @@
 <wire x1="114.3" y1="59.69" x2="127" y2="59.69" width="0" layer="91"/>
 <wire x1="114.3" y1="76.2" x2="114.3" y2="59.69" width="0" layer="91"/>
 <wire x1="127" y1="68.58" x2="127" y2="50.8" width="0" layer="91"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="RFBT" gate="1" pin="1@1"/>
-<wire x1="127" y1="83.82" x2="127" y2="86.36" width="0" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="RFBB" gate="1" pin="2@2"/>
-<wire x1="127" y1="35.56" x2="127" y2="30.48" width="0" layer="91"/>
 </segment>
 </net>
 </nets>
