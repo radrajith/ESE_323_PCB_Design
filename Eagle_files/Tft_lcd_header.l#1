@@ -407,20 +407,20 @@
 <smd name="V-" x="-3.12" y="0.88" dx="2.35" dy="0.7" layer="1"/>
 <smd name="I_IN" x="1.13" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
 <smd name="I_OUT" x="-3.12" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
-<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="1"/>
-<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="1"/>
-<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="1"/>
-<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="1"/>
-<text x="-4.23" y="0.97" size="1.27" layer="21">-</text>
-<text x="2.4" y="0.97" size="1.27" layer="21">+</text>
+<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="25"/>
+<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="25"/>
+<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="25"/>
+<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="25"/>
+<text x="-4.23" y="0.97" size="1.27" layer="25">-</text>
+<text x="3.67" y="0.97" size="1.27" layer="25">+</text>
 </package>
 <package name="BANANA_PLUG">
 <pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
 <pad name="P$2" x="5.08" y="0" drill="1.3208" shape="square"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="1"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="25"/>
+<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="25"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="25"/>
+<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="25"/>
 </package>
 <package name="JTAG">
 <wire x1="-6.35" y1="1.905" x2="-3.81" y2="1.905" width="0.1524" layer="21"/>
@@ -458,7 +458,7 @@
 <package name="RESISTOR">
 <smd name="1" x="-0.3" y="0.8" dx="0.6" dy="1.6" layer="1"/>
 <smd name="2" x="-2.8" y="0.85" dx="0.6" dy="1.7" layer="1"/>
-<text x="-0.82" y="0.19" size="0.254" layer="1">1k</text>
+<text x="-2.09" y="1.46" size="0.254" layer="25">1k</text>
 <wire x1="-3.4925" y1="1.905" x2="0.3175" y2="1.905" width="0.127" layer="20"/>
 <wire x1="0.3175" y1="1.905" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
 <wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="20"/>
@@ -875,10 +875,10 @@ UART&lt;p&gt;
 <devices>
 <device name="" package="RESISTOR_4PIN">
 <connects>
-<connect gate="G$1" pin="I_IN" pad="I_OUT"/>
-<connect gate="G$1" pin="I_OUT" pad="I_IN"/>
-<connect gate="G$1" pin="V+" pad="V-"/>
-<connect gate="G$1" pin="V-" pad="V+"/>
+<connect gate="G$1" pin="I_IN" pad="I_IN"/>
+<connect gate="G$1" pin="I_OUT" pad="I_OUT"/>
+<connect gate="G$1" pin="V+" pad="V+"/>
+<connect gate="G$1" pin="V-" pad="V-"/>
 </connects>
 <technologies>
 <technology name=""/>
