@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="mil" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -71,8 +71,8 @@
 <wire x1="1.1176" y1="-0.7112" x2="1.1176" y2="0.7112" width="0.1524" layer="25"/>
 <wire x1="1.1176" y1="0.7112" x2="-0.3556" y2="0.7112" width="0.1524" layer="25"/>
 <wire x1="-1.1176" y1="0.7112" x2="-1.1176" y2="-0.7112" width="0.1524" layer="25"/>
-<text x="-2.8702" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-3.2766" y="-0.635" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-2.8702" y="-3.175" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
+<text x="-2.0066" y="1.905" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
 </package>
 <package name="0402">
 <smd name="1" x="-0.4191" y="0" dx="0.5588" dy="0.6096" layer="1"/>
@@ -87,8 +87,8 @@
 <wire x1="0.5588" y1="-0.3048" x2="0.5588" y2="0.3048" width="0.1524" layer="25"/>
 <wire x1="0.127" y1="0.3048" x2="-0.1524" y2="0.3048" width="0.1524" layer="25"/>
 <wire x1="-0.5588" y1="0.3048" x2="-0.5588" y2="-0.3048" width="0.1524" layer="25"/>
-<text x="-2.8702" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-3.2766" y="-0.635" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-2.8702" y="-1.905" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
+<text x="-2.0066" y="0.635" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
 </package>
 <package name="DRC0010J">
 <smd name="1" x="-1.4" y="1" dx="0.24" dy="0.6" layer="1" rot="R90"/>
@@ -108,8 +108,8 @@
 <wire x1="-1.5494" y1="-1.5494" x2="1.5494" y2="-1.5494" width="0.1524" layer="25"/>
 <wire x1="-0.5842" y1="0.8636" x2="-1.1684" y2="0.8636" width="0.1016" layer="25" curve="-180"/>
 <wire x1="-1.1684" y1="0.8636" x2="-0.5842" y2="0.8636" width="0.1016" layer="25" curve="-180"/>
-<text x="-1.397" y="-1.651" size="1.27" layer="25" ratio="6" rot="SR0">.Designator</text>
-<text x="-2.8702" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
+<text x="-2.667" y="-4.191" size="1.27" layer="25" ratio="6" rot="SR0">.Designator</text>
+<text x="3.4798" y="0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
 <wire x1="-1.7018" y1="1.7018" x2="-1.143" y2="1.7018" width="0.2032" layer="21"/>
 <wire x1="-1.7018" y1="1.5494" x2="-1.7018" y2="1.7018" width="0.2032" layer="21"/>
 <wire x1="1.7018" y1="1.5494" x2="1.7018" y2="1.7018" width="0.2032" layer="21"/>
@@ -130,7 +130,7 @@
 <vertex x="0.75" y="1.16"/>
 <vertex x="-0.75" y="1.16"/>
 </polygon>
-<text x="-3.2766" y="-0.635" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
+<text x="4.3434" y="-1.905" size="1.27" layer="27" ratio="6" rot="SR0">&gt;Value</text>
 </package>
 </packages>
 <symbols>
@@ -138,15 +138,15 @@
 <pin name="NODE" x="0" y="-2.54" length="short" direction="pas" rot="R270"/>
 <wire x1="0" y1="-2.54" x2="0" y2="2.54" width="0.508" layer="94"/>
 <wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.508" layer="94"/>
-<text x="0" y="0" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
-<text x="0" y="0" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
+<text x="5.08" y="-5.08" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
+<text x="5.08" y="0" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_BLOCK_IO">
 <pin name="1" x="-1.27" y="0" length="point" direction="pas"/>
 <pin name="2" x="1.27" y="0" length="point" direction="pas" rot="R180"/>
 <wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.508" layer="94"/>
-<text x="0" y="0" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
-<text x="0" y="0" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
+<text x="-2.54" y="-5.08" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
+<text x="-2.54" y="2.54" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_PWL_VOLTAGE_SOURCE">
 <pin name="+" x="-7.62" y="0" length="short" direction="pas"/>
@@ -175,8 +175,8 @@
 <wire x1="-1.905" y1="-1.524" x2="-3.81" y2="1.524" width="0.508" layer="94"/>
 <wire x1="-3.81" y1="1.524" x2="-5.08" y2="0" width="0.508" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.508" layer="94"/>
-<text x="0" y="0" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
-<text x="0" y="0" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
+<text x="-5.08" y="5.08" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
+<text x="-5.08" y="-7.62" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_PRIM_PWL_VOLTAGE_SOURCE">
 <pin name="+" x="-7.62" y="0" length="short" direction="pas"/>
@@ -222,7 +222,7 @@
 <wire x1="-3.81" y1="1.524" x2="-5.08" y2="0" width="0.1524" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.1524" layer="94"/>
 <text x="-4.7244" y="4.0386" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-5.3594" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-5.3594" y="-6.1214" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_PWL_CURRENT_LOAD">
 <pin name="+" x="-7.62" y="0" length="short" direction="pas"/>
@@ -252,7 +252,7 @@
 <wire x1="-3.81" y1="1.524" x2="-5.08" y2="0" width="0.1524" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-7.62" y2="0" width="0.1524" layer="94"/>
 <text x="-4.7244" y="4.6736" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-5.3594" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-5.3594" y="-6.1214" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_PRIM_STARTUP_VOLTAGE_SOURCE">
 <pin name="+" x="-7.62" y="0" length="short" direction="pas"/>
@@ -292,7 +292,7 @@
 <wire x1="0.762" y1="0" x2="7.62" y2="0" width="0.1524" layer="94"/>
 <wire x1="-0.762" y1="-3.048" x2="-0.762" y2="3.048" width="0.1524" layer="94"/>
 <text x="-4.7244" y="6.5786" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-5.3594" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-5.3594" y="4.0386" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_GND">
 <pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
@@ -300,8 +300,8 @@
 <wire x1="-3.302" y1="0" x2="3.302" y2="0" width="0.1524" layer="94"/>
 <wire x1="-2.286" y1="-1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
 <wire x1="-0.762" y1="-2.032" x2="0.762" y2="-2.032" width="0.1524" layer="94"/>
-<text x="-4.7244" y="-1.0414" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-5.3594" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+<text x="5.4356" y="1.4986" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
+<text x="4.8006" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_INDUCTOR">
 <pin name="2" x="7.62" y="0" visible="off" length="short" direction="pas" rot="R180"/>
@@ -328,7 +328,7 @@
 <wire x1="0" y1="-0.1778" x2="0" y2="0" width="0.1524" layer="94" curve="-53"/>
 <wire x1="2.54" y1="-0.1778" x2="2.54" y2="0" width="0.1524" layer="94" curve="-53"/>
 <text x="-4.7244" y="4.6736" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-5.3594" y="-1.0414" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+<text x="-5.3594" y="-3.5814" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 <symbol name="WB_TPS63000DRC">
 <pin name="VOUT" x="20.32" y="10.16" length="middle" direction="pas" rot="R180"/>
@@ -418,15 +418,7 @@
 <connect gate="A" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="CAP" value="1.0E-5" constant="no"/>
-<attribute name="ESR" value="0.0" constant="no"/>
-<attribute name="IRMS" value="0.0" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Taiyo Yuden" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LMK212BJ106KG-T" constant="no"/>
-<attribute name="VDC" value="10.0" constant="no"/>
-<attribute name="VENDOR" value="Taiyo Yuden" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -442,14 +434,7 @@
 <connect gate="A" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="DCR" value="0.26" constant="no"/>
-<attribute name="IDC" value="0.7" constant="no"/>
-<attribute name="L" value="1.5E-6" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="MuRata" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LQM21PN1R5MC0D" constant="no"/>
-<attribute name="VENDOR" value="MuRata" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -465,14 +450,7 @@
 <connect gate="A" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="MANUFACTURER_NAME" value="Vishay-Dale" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="CRCW0402178KFKED" constant="no"/>
-<attribute name="POWER" value="0.063" constant="no"/>
-<attribute name="RESISTANCE" value="178000.0" constant="no"/>
-<attribute name="TOLERANCE" value="1.0" constant="no"/>
-<attribute name="VENDOR" value="Vishay-Dale" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -488,14 +466,7 @@
 <connect gate="A" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="MANUFACTURER_NAME" value="Vishay-Dale" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="CRCW04021M00FKED" constant="no"/>
-<attribute name="POWER" value="0.063" constant="no"/>
-<attribute name="RESISTANCE" value="1000000.0" constant="no"/>
-<attribute name="TOLERANCE" value="1.0" constant="no"/>
-<attribute name="VENDOR" value="Vishay-Dale" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -520,20 +491,7 @@
 <connect gate="A" pin="VOUT" pad="1"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="COMPTYPE" value="IC" constant="no"/>
-<attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Texas Instruments" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="TPS63000DRCR" constant="no"/>
-<attribute name="MOUNTTYPE" value="SMT" constant="no"/>
-<attribute name="PACKAGEREFERENCE" value="DRC0010A" constant="no"/>
-<attribute name="PARTNUMBER" value="TPS63000DRC" constant="no"/>
-<attribute name="PIN_COUNT" value="11" constant="no"/>
-<attribute name="REFDES" value="RefDes" constant="no"/>
-<attribute name="ROHS" value="Y" constant="no"/>
-<attribute name="TYPE" value="TYPE" constant="no"/>
-<attribute name="VALUE" value="Value" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -549,15 +507,7 @@
 <connect gate="A" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="CAP" value="2.2E-5" constant="no"/>
-<attribute name="ESR" value="0.0" constant="no"/>
-<attribute name="IRMS" value="0.0" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Taiyo Yuden" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LMK212BJ226MG-T" constant="no"/>
-<attribute name="VDC" value="10.0" constant="no"/>
-<attribute name="VENDOR" value="Taiyo Yuden" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
