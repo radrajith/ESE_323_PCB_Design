@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <link rel="stylesheet" type="text/css" href="hoverinfo.css">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -44,407 +43,545 @@
 <h3>
 <a id="design-and-spec" class="anchor" href="#design-and-spec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>design and spec</h3>
 
-<p>The current meter will be designed to measure upto 3A current. The maximum current rating is limited by the bandgap reference voltage present in the MCU and will only be able to read positive DC currents. The circuit will be powered by primary 5v battery(the ones used for charging cell phones), and the analog current measurement will be sampled at 300kSPS (based on atxmega32 specs), and the digital output will have 12-bit resolution. The step voltage will be 1V/(2^12) = 0.0002441V. The circuit will be protected using a fuse.</p>
+<p>Design drawing(initial version)
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/back_view.jpg?raw=true" alt="rear View"></p>
 
-<p>Since the class is about coming with our own design and specs, I decided to add some extra feature to make this project cooler. A LCD touch screen is added to display the current readings such as peak, instantaneous, rms etc. In addition the LCD will be used to graph continuous data assuming I will finish the programming on time. Since the programming had to go through a number of revision a PDI communication will be implemented to modify the code as intended. In addition to serving as a normal current meter, A USB port will be added to monitor the current usage of mobile phone or other devices charged using USB. A micro usb port will be used as the input and USB as output. </p>
+<p>The current meter will be designed to read up to 7A. The maximum current rating is set to be 8A (the fuse will break at this point) and will only be able to read positive DC currents. The circuit can be powered by a battery with a voltage ranging from 2.5 to 5v, in this design 2-AAA battery is used as a power source i.e 3V source. The Analog current measurement will be sampled at 12kSPS (based on atxmega32 specs), and the digital output will have 12-bit resolution. </p>
+
+<p>The current is read by measuring the voltage that flows across a shunt resistor. The shunt resistor is specially chosen to have current sense technology, where the resistors packs have 4 terminals, 2 for current flow, and 2 for current measurement. The voltage across the resistor is read using the Atxmega micro controller's built in Analog to digital converter(ADC). </p>
+
+<p>Since the class is about coming with our own design and specs, I decided to add some extra feature to make this project cooler. A LCD touch screen is added to display the current readings such as peak, instantaneous, rms etc. In addition the LCD will be used to graph continuous data assuming I will finish the programming on time. Since the programming had to go through a number of revisions, a PDI communication will be implemented to modify the code as intended. In addition to serving as a normal current meter, A USB port will be added to monitor the current usage of mobile phone or other devices charged using USB. A micro usb port will be used as the input and USB as output. </p>
 
 <hr>
 
 <h3>
-<a id="design-considerations-and-compromises" class="anchor" href="#design-considerations-and-compromises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design: Considerations and compromises</h3>
-<p><a href = "https://github.com/radrajith/ESE_323_PCB_Design/blob/master/weekly%20reports/EPSON001.PDF">Design Sketch</a></p>
+<a id="ideal-world-scenario" class="anchor" href="#ideal-world-scenario" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ideal World Scenario</h3>
 
-<div class="hoverinfo"> 
-  <span>-Design Sketch   </span>
-  <p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/weekly%20reports/report%202.jpg?raw=true" alt="sketch" height="750" width="500"></p>
-  </div>
+<p>The Atxmega32 comes equipped with amplifier of various ranges like 1/2x, 1x,2x,8x...64x. And since the internal bandgap reference voltage is used, the reference voltage will be a constant 1V. This means by using a 0.01 ohm resistor and using a amplification of 1/2x, the max current that can be read using the meter will be 200A. </p>
+
+<hr>
+
+<h3>
+<a id="design-considerations-and-practical-limitations" class="anchor" href="#design-considerations-and-practical-limitations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design: Considerations and practical limitations</h3>
+
 <ul>
-<li>A 4 pin i2c communication port is added to provide an alternative display source in case the touch screen display malfunctions. </li>
+<li>
+<strong>Why 7A current limit?</strong>
+The 4 terminal  resistors are available for different power rating for 0.01 ohms. For instance, if 5W rated resistor was implemented the maximum current it can handle would be 22.36A (sqrt(5/0.01)). However, larger current required the trace width of the PCB to be more than 0.4 inch/1cm width. Since the board size use for this design is 5cmx5cm, having a trace width of 1cm will require larger board which adds to the cost. In addition the resistor land pattern is quite small that having a trace causes overlaps. A 4mm/.16in trace is implemented in this design, which corresponds to 7-8A according to graph. </li>
+</ul>
+
+<p><img src="https://wiki.xtronics.com/images/7/74/PCB_current.png" alt="current vs width">
+source: <a href="https://wiki.xtronics.com/index.php/Wire-Gauge_Ampacity">https://wiki.xtronics.com/index.php/Wire-Gauge_Ampacity</a></p>
+
+<ul>
+<li><strong>Using 0.5mohm vs 1mohm 4 terminal resistor?</strong></li>
+</ul>
+
+<p>Although the cost and sizing of both parts remain the same, for this design 0.01 mohm resistor is used. An ammeter ideally has 0 internal resistance, thus for a current meter design its desired to pick a shunt resistor with lowest resistance. However, I had to go with 1mOhm resistor due to the fact that at practical usage, there is resistance contributed from the solder and traces. This will cause error in measurement. In addition, the limitation also arises from the availability of amplifiers in the MCU. With a step voltage of 0.000244, using 0.5 mOhm resistor will reduce the minimum current that can be measured and also accuracy. Thus to have a smaller minimum current, better accuracy and less error a higher valued resistor was implemented.</p>
+
+<ul>
+<li>**Implementation of two display ports
+In addition to a 14 pin header, a 4 pin header is added for i2c communication to provide an alternative display source in case the touch screen display malfunctions and the if the coding cannot be finished on time. </li>
 </ul>
 
 <hr>
+
+<h3>
+<a id="schematic-view" class="anchor" href="#schematic-view" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Schematic View</strong>
+</h3>
+
+<p>Page one
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page1.PNG?raw=true" alt="Page one">
+Page two
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page2.PNG?raw=true" alt="page two"></p>
+
+<h3>
+<a id="board-view" class="anchor" href="#board-view" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Board view</strong>
+</h3>
+
+<p>Board layout
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Board.PNG?raw=true" alt="board"></p>
+
+<hr>
+
+<h3>
+<a id="gain-caluculations" class="anchor" href="#gain-caluculations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gain Caluculations</h3>
+
+<p>Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/gain%20calculation.png?raw=true" alt="gain"></p>
 
 <h3>
 <a id="parts-planned-to-used" class="anchor" href="#parts-planned-to-used" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parts planned to used</h3>
 
 <h4>
 <a id="24-lcd-tft-display" class="anchor" href="#24-lcd-tft-display" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.4" LCD TFT Display</h4>
-<div>
-<div class="hoverinfo"> 
-<span>-Front View    </span>
-  <p>
-<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/front_view.jpg?raw=true" alt="LCD TFT display front view" height="500" width="750">
-  </p></div>  
-  <div class="hoverinfo"> 
-  <span>-Rear View   </span>
-  <p><img src="https://raw.githubusercontent.com/radrajith/ESE_323_PCB_Design/master/Pictures/LCD%20TFT%20screen/back_view.jpg" alt="LCD TFT display Rear view" height="500" width="750"></p>
-  </div>
-  <div class="hoverinfo"> 
-  <span>-  Mechanical Drawings   </span>
-   <p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/mechanical.jpg?raw=true" alt="Mechanical" height="750" width="500"></p>
-   </div>
-  <div class="hoverinfo"> 
-  <span>-DataSheet</span>
-        <p>coming soon</p>
-  </div>
-          </div>
+
+<p>Lcd touch screen display made by UXCELL, bought from <a href="https://www.amazon.com/240x320-Touch-Panel-Module-ILI9341/dp/B00W8TPNIK/ref=sr_1_5?ie=UTF8&amp;qid=1477094268&amp;sr=8-5&amp;keywords=uxcell+2.4+lcd">amazon.com</a>. The coding is going to be modelled after <a href="http://marekburiak.github.io/ILI9341_due/">ILI9341_due</a>
+Front View
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/front_view.jpg?raw=true" alt="Front View">
+Rear View
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/back_view.jpg?raw=true" alt="rear View">
+Mechanical Drawings
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/mechanical.jpg?raw=true" alt="Mechanical Drawing">
+<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/TJC-024-9341%20lcd%20touch%20screen%20data%20sheet.pdf">TFT Datasheet</a>
+<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/14%20pin%20header.pdf">14 pin header datasheet</a></p>
+
 <h5>
-<a id="eagle-files" class="anchor" href="#eagle-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle files</h5>
-<div class="hoverinfo"> 
-<span>14 pin Female header</span><p>
-<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/Female%20header%20pins.PNG?raw=true" alt="RGB LCD" height="300" width="750">
-  </p></div>
-  <hr>
+<a id="eagle-pic" class="anchor" href="#eagle-pic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
+
+<p>14 pin Female header
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/LCD%20TFT%20screen/Female%20header%20pins.PNG?raw=true" alt="14 pin header"></p>
+
+<hr>
 
 <h4>
-<a id="rgb-lcd-display" class="anchor" href="#rgb-lcd-display" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RGB LCD Display</h4>
+<a id="rgb-lcd-display-from-seeedstudio" class="anchor" href="#rgb-lcd-display-from-seeedstudio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RGB LCD Display from seeedstudio</h4>
 
-          <div class="hoverinfo"> 
-          <span>images(seeedstudio)</span>
-            <p>
-<img src="https://statics3.seeedstudio.com/images/104030001%201.jpg" alt="RGB LCD" height="300" width="750">
-  </p></div>
- <p><a href = "http://wiki.seeed.cc/Grove-LCD_RGB_Backlight/">Datasheet/wiki</a></p>
+<p>images
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/RGB%20LCD/universal%204%20pin%20connector.PNG?raw=true" alt="RGB LCD"></p>
+
+<p><a href="http://wiki.seeed.cc/Grove-LCD_RGB_Backlight/">Datasheet</a></p>
 
 <h5>
-<a id="eagle-files-1" class="anchor" href="#eagle-files-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle files</h5>
-<div class="hoverinfo"> 
-<span>universal 4 pin grove connector</span><p>
-<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/RGB%20LCD/universal%204%20pin%20connector.PNG?raw=true" alt="4-pin" height="300" width="750">
-          </p></div>
-          <hr>
+<a id="eagle-pic-1" class="anchor" href="#eagle-pic-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
+
+<p>universal 4 pin grove connector
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/RGB%20LCD/universal%204%20pin%20connector.PNG?raw=true" alt="4 pin connector"></p>
+
+<hr>
 
 <h4>
 <a id="micro-usb" class="anchor" href="#micro-usb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Micro USB</h4>
 
-<p>images</p>
+<p>Eagle pic
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/micro%20usb.PNG?raw=true" alt="micro usb">
+obtained from sparkfun eagle library
+<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/micro%20usb%20mechanical.pdf">datasheet</a></p>
+
+<h4>
+<a id="usb" class="anchor" href="#usb" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>USB</h4>
+
+<p>Eagle pic
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/usbpic.PNG?raw=true" alt="USB">
+obtained from CON-Berg library</p>
 
 <h4>
 <a id="atxmega-processor" class="anchor" href="#atxmega-processor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Atxmega Processor</h4>
 
-<p>Datasheet (coming soon)                  | pinouts</p>
+<p>Datasheet
+<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/xmega%20manual.pdf">long form</a>
+<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/ATxmega32E5.pdf">short form</a></p>
+
+<p>pinouts
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Atxmega/pinouts.PNG?raw=true" alt="pinout">
+taken from atmel xmega 32 datasheet</p>
 
 <h5>
-<a id="eagle-files-2" class="anchor" href="#eagle-files-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle Files</h5>
+<a id="eagle-pic-2" class="anchor" href="#eagle-pic-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
 
-<div class="hoverinfo"> 
-  <span> Layout   </span>
-   <p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Atxmega/atxmega32.PNG?raw=true" alt="atmega_layout" height="500" width="750"></p>
-   </div>
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Atxmega/atxmega32.PNG?raw=true" alt="xmega eagle"></p>
 
 <hr>
+
+<h4>
+<a id="4-terminal-shunt-resistor" class="anchor" href="#4-terminal-shunt-resistor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4 Terminal shunt resistor</h4>
+
+<p><a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/4%20termianl%20resistor(correct%20one).pdf">datasheet</a></p>
+
+<h5>
+<a id="eagle-pic-3" class="anchor" href="#eagle-pic-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
+
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/4%20terminal%20resistor.PNG?raw=true" alt="shunt resistor"></p>
+
+<h4>
+<a id="jtag" class="anchor" href="#jtag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Jtag</h4>
+
+<p>The eagle file was modified from the 10 pin jtag obtained from jtag library</p>
+
+<h5>
+<a id="eagle-pic-4" class="anchor" href="#eagle-pic-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
+
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/jtag.PNG?raw=true" alt="jtag"></p>
+
+<h4>
+<a id="banana-plug" class="anchor" href="#banana-plug" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Banana plug</h4>
+
+<p><a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Datasheets/banana%20plug.pdf">Datasheet</a></p>
+
+<h5>
+<a id="eagle-pic-5" class="anchor" href="#eagle-pic-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eagle pic</h5>
+
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/banana%20plug.PNG?raw=true" alt="banplug"></p>
 
 <h3>
 <a id="bom" class="anchor" href="#bom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BOM</h3>
 
-<table>
-<thead>
-<tr>
-  
-  <td><b>designation</b></td>
-<td><b>description</b></td>
-<td><b>Manufacturer</b></td>
-<td><b>manufacturer part no</b></td>
-<td><b>vendor</b></td>
-<td><b>vendor part number</b></td>
-<td><b>quantity</b></td>
-<td><b>cost/part</b></td>
-<td><b>Total price</b></td>
-<td><b>Notes</b></td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>LCD display</td>
-<td>uxcell</td>
-<td>a14121800ux0780</td>
-<td>Amazon</td>
-<td></td>
-<td>1</td>
-<td>13.36</td>
-<td>13.36</td>
-<td>3.3V 240x320 2.4" SPI TFT LCD Touch Panel Module <a href="https://www.amazon.com/gp/product/B00W8TPNIK/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;psc=1">https://www.amazon.com/gp/product/B00W8TPNIK/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;psc=1</a>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>Universal 4 pin connector</td>
-<td>Seeedstudio</td>
-<td></td>
-<td>mouser</td>
-<td></td>
-<td>1</td>
-<td>1.5</td>
-<td>1.5</td>
-<td>connector for seeedstudio rgb lcd screen.</td>
-</tr>
-<tr>
-<td></td>
-<td>Micro Usb</td>
-<td>Amphenol FCI</td>
-<td>10118192-0001LF</td>
-<td>Digikey</td>
-<td>609-4613-1-ND</td>
-<td>2</td>
-<td>0.46</td>
-<td>0.92</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>RGB lcd display</td>
-<td>Seeedstudio</td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>already own this product</td>
-</tr>
-<tr>
-<td></td>
-<td>USB</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>ask prof</td>
-</tr>
-<tr>
-<td></td>
-<td>Jtag</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>ask prof</td>
-</tr>
-<tr>
-<td></td>
-<td>Atxmega 32</td>
-<td>atmel</td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>obtain from prof</td>
-</tr>
-<tr>
-<td></td>
-<td>Resistor</td>
-<td>ohmite</td>
-<td>LVK12R010FER</td>
-<td>Digikey</td>
-<td>LVK12R010FERTR-ND</td>
-<td>1</td>
-<td>0.7</td>
-<td>0.7</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>black Banana plugs</td>
-<td>Cinch connectivity</td>
-<td>105-0753-001</td>
-<td>digikey</td>
-<td>J110-ND</td>
-<td>1</td>
-<td>0.87</td>
-<td>0.87</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>red Banana plugs</td>
-<td>Cinch connectivity</td>
-<td>105-0752-001</td>
-<td>Digikey</td>
-<td>J109-ND</td>
-<td>1</td>
-<td>0.87</td>
-<td>0.87</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Printed Circuit Board</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Switching Power Supply</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>L1</td>
-<td>MuRata</td>
-<td>LQM2HPN1R5MG0L</td>
-<td>TI</td>
-<td></td>
-<td>1</td>
-<td>$0.34</td>
-<td>$0.34</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>U1</td>
-<td>Texas Instruments</td>
-<td>TPS63051YFFR</td>
-<td>TI</td>
-<td></td>
-<td>1</td>
-<td>$2.02</td>
-<td>$2.02</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Rpg</td>
-<td>Vishay-Dale</td>
-<td>CRCW0603100KFKEA</td>
-<td>TI</td>
-<td></td>
-<td>1</td>
-<td>$0.10</td>
-<td>$0.10</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Cin</td>
-<td>Taiyo Yuden</td>
-<td>LMK107BBJ106MAHT</td>
-<td>TI</td>
-<td></td>
-<td>1</td>
-<td>$0.51</td>
-<td>$0.51</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Coutx,Cout</td>
-<td>Samsung Electro-Mechanics</td>
-<td>CL10A106MQ8NNNC</td>
-<td>TI</td>
-<td></td>
-<td>2</td>
-<td>$0.17</td>
-<td>$0.34</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Css</td>
-<td>MuRata</td>
-<td>GRM155R61A102KA01D</td>
-<td>TI</td>
-<td></td>
-<td>1</td>
-<td>$0.10</td>
-<td>$0.10</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Total</td>
-<td>20.93</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p><code>&lt;table class="table table-bordered table-hover table-condensed"&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Designation&lt;/td&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Manufacturer&lt;/td&gt;
+&lt;td&gt;manufacturer part no&lt;/td&gt;
+&lt;td&gt;vendor&lt;/td&gt;
+&lt;td&gt;vendor part number &lt;/td&gt;
+&lt;td&gt;quantity&lt;/td&gt;
+&lt;td&gt;cost/part&lt;/td&gt;
+&lt;td&gt;Total price&lt;/td&gt;
+&lt;td&gt;Status&lt;/td&gt;
+&lt;td&gt;Notes&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;LCD&lt;/td&gt;
+&lt;td&gt;LCD display&lt;/td&gt;
+&lt;td&gt;uxcell&lt;/td&gt;
+&lt;td&gt;a14121800ux0780&lt;/td&gt;
+&lt;td&gt;Amazon&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;13.36&lt;/td&gt;
+&lt;td&gt;13.36&lt;/td&gt;
+&lt;td&gt;arrived&lt;/td&gt;
+&lt;td&gt;3.3V 240x320 2.4&amp;quot; SPI TFT LCD Touch Panel Module https://www.amazon.com/gp/product/B00W8TPNIK/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;amp;psc=1&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CON2&lt;/td&gt;
+&lt;td&gt;Universal 4 pin connector &lt;/td&gt;
+&lt;td&gt;Seeedstudio&lt;/td&gt;
+&lt;td&gt;110990037&lt;/td&gt;
+&lt;td&gt;mouser &lt;/td&gt;
+&lt;td&gt;ACC39258O&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;connector for seeedstudio rgb lcd screen.&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X1, X2&lt;/td&gt;
+&lt;td&gt;Micro Usb&lt;/td&gt;
+&lt;td&gt;Amphenol FCI&lt;/td&gt;
+&lt;td&gt;10118192-0001LF&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;609-4613-1-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.46&lt;/td&gt;
+&lt;td&gt;0.47&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;RGB&lt;/td&gt;
+&lt;td&gt;RGB lcd display&lt;/td&gt;
+&lt;td&gt;Seeedstudio&lt;/td&gt;
+&lt;td&gt;104030001&lt;/td&gt;
+&lt;td&gt;seeedstudio&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;arrived&lt;/td&gt;
+&lt;td&gt;already own this product&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X3&lt;/td&gt;
+&lt;td&gt;USB&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;obtain from prof&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X4&lt;/td&gt;
+&lt;td&gt;Jtag&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;obtain from prof&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;U1&lt;/td&gt;
+&lt;td&gt;Atxmega 32 E5&lt;/td&gt;
+&lt;td&gt;atmel&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;obtain from prof&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R1&lt;/td&gt;
+&lt;td&gt;4 terminal Resistor&lt;/td&gt;
+&lt;td&gt;ohmite&lt;/td&gt;
+&lt;td&gt;FC4L64R010FER&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;FC4L64R010FERCT-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1.62&lt;/td&gt;
+&lt;td&gt;1.62&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X5&lt;/td&gt;
+&lt;td&gt;black Banana plugs&lt;/td&gt;
+&lt;td&gt;Cinch connectivity&lt;/td&gt;
+&lt;td&gt;105-0753-001&lt;/td&gt;
+&lt;td&gt;digikey&lt;/td&gt;
+&lt;td&gt;J110-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.87&lt;/td&gt;
+&lt;td&gt;0.87&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X6&lt;/td&gt;
+&lt;td&gt;red Banana plugs&lt;/td&gt;
+&lt;td&gt;Cinch connectivity&lt;/td&gt;
+&lt;td&gt;105-0752-001&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;J109-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.87&lt;/td&gt;
+&lt;td&gt;0.87&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R2,R3,R4,R5,R6&lt;/td&gt;
+&lt;td&gt;1kohm current limiting resistor&lt;/td&gt;
+&lt;td&gt;yangeo&lt;/td&gt;
+&lt;td&gt;RC1206JR-071KL&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;311-1.0KERCT-ND&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;0.0106&lt;/td&gt;
+&lt;td&gt;0.53&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;required quantity 6-8/person&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R2,R3,R4,R5,R7&lt;/td&gt;
+&lt;td&gt;0 ohm resistor&lt;/td&gt;
+&lt;td&gt;yangeo&lt;/td&gt;
+&lt;td&gt;RC1206JR-070RL&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;311-0.0ERCT-ND&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;0.0138&lt;/td&gt;
+&lt;td&gt;0.69&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;if in case 1k resistor is not needed. Put this in place of that smt location&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Battery&lt;/td&gt;
+&lt;td&gt;battery holder&lt;/td&gt;
+&lt;td&gt;MPD&lt;/td&gt;
+&lt;td&gt;SBH431-1AS&lt;/td&gt;
+&lt;td&gt;digikey&lt;/td&gt;
+&lt;td&gt;SBH431-1AS-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1.51&lt;/td&gt;
+&lt;td&gt;1.51&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;might be replaced with sparkfun one &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;PB1, PB2&lt;/td&gt;
+&lt;td&gt;push button&lt;/td&gt;
+&lt;td&gt;omron&lt;/td&gt;
+&lt;td&gt;B3FS-1010P&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;SW1440CT-ND&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0.79&lt;/td&gt;
+&lt;td&gt;0.79&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;F1&lt;/td&gt;
+&lt;td&gt;fuse&lt;/td&gt;
+&lt;td&gt;bel fuse&lt;/td&gt;
+&lt;td&gt;C1H 15&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;507-1944-1-ND&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.306&lt;/td&gt;
+&lt;td&gt;1.53&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CON1&lt;/td&gt;
+&lt;td&gt;14 pin header&lt;/td&gt;
+&lt;td&gt;gtk&lt;/td&gt;
+&lt;td&gt;fhss14g10/rh&lt;/td&gt;
+&lt;td&gt;ebay&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;ordered&lt;/td&gt;
+&lt;td&gt;10 for $4&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;Printed Circuit Board&lt;/td&gt;
+&lt;td&gt;fusion pcb&lt;/td&gt;
+&lt;td&gt;5x5&lt;/td&gt;
+&lt;td&gt;seeedstudio&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;9.9&lt;/td&gt;
+&lt;td&gt;9.9&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;cost will go down when combined&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Switching Power Supply&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Cin&lt;/td&gt;
+&lt;td&gt;capacitor&lt;/td&gt;
+&lt;td&gt;Taiyo Yuden&lt;/td&gt;
+&lt;td&gt;LMK212BJ106KG-T&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;587-1300-1-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$0.20 &lt;/td&gt;
+&lt;td&gt;$0.20 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;0.139&lt;/td&gt;
+&lt;td align="right"&gt;1.39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Cout&lt;/td&gt;
+&lt;td&gt;capacitor&lt;/td&gt;
+&lt;td&gt;Taiyo Yuden&lt;/td&gt;
+&lt;td&gt;LMK212BJ226MG-T&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;587-1958-1-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$0.71 &lt;/td&gt;
+&lt;td&gt;$0.71 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;0.56&lt;/td&gt;
+&lt;td align="right"&gt;5.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;L1&lt;/td&gt;
+&lt;td&gt;inductor&lt;/td&gt;
+&lt;td&gt;MuRata&lt;/td&gt;
+&lt;td&gt;LQM21PN1R5MC0D&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;490-4993-1-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$0.13 &lt;/td&gt;
+&lt;td&gt;$0.13 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;0.119&lt;/td&gt;
+&lt;td align="right"&gt;1.19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Rfbb&lt;/td&gt;
+&lt;td&gt;resistor&lt;/td&gt;
+&lt;td&gt;Vishay-Dale&lt;/td&gt;
+&lt;td&gt;CRCW0402178KFKED&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;541-178KLCT-ND&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$0.10 &lt;/td&gt;
+&lt;td&gt;$0.10 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;0.032&lt;/td&gt;
+&lt;td align="right"&gt;0.32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Rfbt&lt;/td&gt;
+&lt;td&gt;resistor&lt;/td&gt;
+&lt;td&gt;Vishay-Dale&lt;/td&gt;
+&lt;td&gt;CRCW04021M00FKED&lt;/td&gt;
+&lt;td&gt;Digikey&lt;/td&gt;
+&lt;td&gt;541-1.00MLCT-ND&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;$0.10 &lt;/td&gt;
+&lt;td&gt;$0.20 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td align="right"&gt;0.0232&lt;/td&gt;
+&lt;td align="right"&gt;0.58&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;U1&lt;/td&gt;
+&lt;td&gt;chip&lt;/td&gt;
+&lt;td&gt;Texas Instruments&lt;/td&gt;
+&lt;td&gt;TPS63000DRCR&lt;/td&gt;
+&lt;td&gt;TI&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$2.13 &lt;/td&gt;
+&lt;td&gt;$2.13 &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td align="right"&gt;1.91&lt;/td&gt;
+&lt;td align="right"&gt;19.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;Total&lt;/td&gt;
+&lt;td&gt;37.51&lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</code></p>
 
 <hr>
 
