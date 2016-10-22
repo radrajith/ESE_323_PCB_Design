@@ -390,6 +390,8 @@
 <circle x="4.92" y="34.85" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.28" y="35.2" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.07" y="-1.92" radius="1.51330625" width="0.127" layer="45"/>
+<hole x="4.9" y="34.85" drill="3.2"/>
+<hole x="4.9" y="-1.85" drill="3.2"/>
 </package>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
@@ -520,13 +522,13 @@
 <text x="1.27" y="0" size="1.27" layer="21">6</text>
 </package>
 <package name="RESISTOR">
-<smd name="1" x="-0.15" y="0.28" dx="0.3" dy="0.55" layer="1"/>
-<smd name="2" x="-1.15" y="0.28" dx="0.3" dy="0.55" layer="1"/>
+<smd name="1" x="-0.3" y="0.8" dx="0.6" dy="1.6" layer="1"/>
+<smd name="2" x="-2.8" y="0.85" dx="0.6" dy="1.7" layer="1"/>
 <text x="-0.82" y="0.19" size="0.254" layer="1">1k</text>
-<wire x1="-1.53" y1="-0.14" x2="-1.53" y2="0.66" width="0.127" layer="1"/>
-<wire x1="-1.53" y1="0.66" x2="0.18" y2="0.66" width="0.127" layer="1"/>
-<wire x1="0.19" y1="0.65" x2="0.19" y2="-0.14" width="0.127" layer="1"/>
-<wire x1="0.19" y1="-0.14" x2="-1.53" y2="-0.14" width="0.127" layer="1"/>
+<wire x1="-3.4925" y1="1.905" x2="0.3175" y2="1.905" width="0.127" layer="20"/>
+<wire x1="0.3175" y1="1.905" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
+<wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="20"/>
+<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="1.905" width="0.127" layer="20"/>
 </package>
 <package name="BT4.5X4.5">
 <description>4.5 x 4.5 mm SMD button</description>
@@ -1630,8 +1632,6 @@ Based on  the following source:
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="GND" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
 <part name="VIN" library="AcceleratedDesigns_Lib" deviceset="WB_STARTUP_VOLTAGE_SOURCE" device="WB_STARTUP_VOLTAGE_SOURCE" value="WB_STARTUP_VOLTAGE_SOURCE"/>
-<part name="VOUT" library="sps" deviceset="TP-1502" device=""/>
-<part name="GND7" library="sps" deviceset="TP-1502" device=""/>
 <part name="VIN+" library="sps" deviceset="TP-1502" device=""/>
 <part name="GND-" library="sps" deviceset="TP-1502" device=""/>
 <part name="RFBT" library="sps" deviceset="CRCW04021M00FKED" device=""/>
@@ -1641,6 +1641,8 @@ Based on  the following source:
 <part name="COUT_2" library="sps" deviceset="LMK212BJ226MG-T" device=""/>
 <part name="L1" library="sps" deviceset="LQM21PN1R5MC0D" device=""/>
 <part name="U1" library="sps" deviceset="TPS63000DRCR" device=""/>
+<part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND7" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1688,6 +1690,8 @@ Based on  the following source:
 <instance part="R9" gate="A" x="43.18" y="91.44" rot="R270"/>
 <instance part="GND5" gate="1" x="50.8" y="88.9"/>
 <instance part="GND6" gate="1" x="50.8" y="101.6"/>
+<instance part="+3V7" gate="G$1" x="-35.56" y="101.6"/>
+<instance part="GND7" gate="1" x="-35.56" y="76.2"/>
 </instances>
 <busses>
 </busses>
@@ -1736,6 +1740,11 @@ Based on  the following source:
 <wire x1="96.52" y1="12.7" x2="93.98" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="12.7" x2="93.98" y2="15.24" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<wire x1="-45.72" y1="93.98" x2="-35.56" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="+3V7" gate="G$1" pin="+3V3"/>
+<wire x1="-35.56" y1="99.06" x2="-35.56" y2="93.98" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -1771,6 +1780,11 @@ Based on  the following source:
 <pinref part="R8" gate="A" pin="P$2"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="48.26" y1="104.14" x2="50.8" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-45.72" y1="83.82" x2="-35.56" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="-35.56" y1="83.82" x2="-35.56" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -2076,12 +2090,6 @@ Based on  the following source:
 <instance part="VIN" gate="1" x="-2.54" y="45.72" smashed="yes" rot="R270">
 <attribute name="NAME" x="2.032" y="51.562" size="2" layer="95"/>
 </instance>
-<instance part="VOUT" gate="A" x="157.48" y="66.04" smashed="yes" rot="R180">
-<attribute name="NAME" x="185.0644" y="56.9214" size="2.0828" layer="95" ratio="6" rot="SR180"/>
-</instance>
-<instance part="GND7" gate="A" x="157.48" y="10.16" smashed="yes" rot="R180">
-<attribute name="NAME" x="185.0644" y="1.0414" size="2.0828" layer="95" ratio="6" rot="SR180"/>
-</instance>
 <instance part="VIN+" gate="A" x="-2.54" y="66.04" smashed="yes">
 <attribute name="NAME" x="-30.1244" y="75.1586" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 </instance>
@@ -2149,7 +2157,6 @@ Based on  the following source:
 <wire x1="93.98" y1="10.16" x2="116.84" y2="10.16" width="0" layer="91"/>
 <wire x1="116.84" y1="10.16" x2="157.48" y2="10.16" width="0" layer="91"/>
 <label x="132.08" y="5.08" size="1.778" layer="95"/>
-<pinref part="GND7" gate="A" pin="TP"/>
 <junction x="59.69" y="10.16"/>
 <wire x1="12.7" y1="35.56" x2="12.7" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="35.56" x2="134.62" y2="35.56" width="0" layer="91"/>
@@ -2187,7 +2194,6 @@ Based on  the following source:
 <wire x1="116.84" y1="50.8" x2="116.84" y2="66.04" width="0" layer="91"/>
 <wire x1="116.84" y1="50.8" x2="134.62" y2="50.8" width="0" layer="91"/>
 <label x="129.54" y="68.58" size="1.778" layer="95"/>
-<pinref part="VOUT" gate="A" pin="TP"/>
 <junction x="116.84" y="66.04"/>
 <wire x1="76.2" y1="66.04" x2="93.98" y2="66.04" width="0" layer="91"/>
 <wire x1="93.98" y1="66.04" x2="116.84" y2="66.04" width="0" layer="91"/>

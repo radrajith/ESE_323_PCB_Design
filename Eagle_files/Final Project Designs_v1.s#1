@@ -389,7 +389,7 @@
 <circle x="4.92" y="34.85" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.28" y="35.2" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.07" y="-1.92" radius="1.51330625" width="0.127" layer="45"/>
-<hole x="4.9" y="34.85" drill="3.2"/>
+<hole x="4.9" y="-1.98" drill="3.2"/>
 </package>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
@@ -471,20 +471,20 @@
 <smd name="V-" x="-3.12" y="0.88" dx="2.35" dy="0.7" layer="1"/>
 <smd name="I_IN" x="1.13" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
 <smd name="I_OUT" x="-3.12" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
-<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="1"/>
-<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="1"/>
-<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="1"/>
-<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="1"/>
-<text x="-4.23" y="0.97" size="1.27" layer="21">-</text>
-<text x="2.4" y="0.97" size="1.27" layer="21">+</text>
+<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="25"/>
+<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="25"/>
+<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="25"/>
+<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="25"/>
+<text x="-4.23" y="0.97" size="1.27" layer="25">-</text>
+<text x="3.67" y="0.97" size="1.27" layer="25">+</text>
 </package>
 <package name="BANANA_PLUG">
 <pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
 <pad name="P$2" x="5.08" y="0" drill="1.3208" shape="square"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="1"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="25"/>
+<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="25"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="25"/>
+<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="25"/>
 </package>
 <package name="JTAG">
 <wire x1="-6.35" y1="1.905" x2="-3.81" y2="1.905" width="0.1524" layer="21"/>
@@ -522,11 +522,11 @@
 <package name="RESISTOR">
 <smd name="1" x="-0.3" y="0.8" dx="0.6" dy="1.6" layer="1"/>
 <smd name="2" x="-2.8" y="0.85" dx="0.6" dy="1.7" layer="1"/>
-<text x="-0.82" y="0.19" size="0.254" layer="1">1k</text>
-<wire x1="-3.4925" y1="1.905" x2="0.3175" y2="1.905" width="0.127" layer="20"/>
-<wire x1="0.3175" y1="1.905" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
+<text x="-2.09" y="1.46" size="0.254" layer="25">1k</text>
+<wire x1="-3.4925" y1="2.025" x2="0.3175" y2="2.025" width="0.127" layer="20"/>
+<wire x1="0.3175" y1="2.025" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
 <wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="20"/>
-<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="1.905" width="0.127" layer="20"/>
+<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="2.025" width="0.127" layer="20"/>
 </package>
 <package name="BT4.5X4.5">
 <description>4.5 x 4.5 mm SMD button</description>
@@ -1184,12 +1184,12 @@ Based on  the following source:
 <library name="fuse_smt">
 <packages>
 <package name="FUSE_SMT">
-<smd name="P$1" x="1.1" y="2.7" dx="2.1" dy="5.4" layer="1"/>
-<smd name="P$2" x="-5.6" y="2.7" dx="2.1" dy="5.4" layer="1"/>
-<wire x1="-7.6" y1="-0.5" x2="-7.6" y2="5.9" width="0.127" layer="1"/>
-<wire x1="-7.6" y1="5.9" x2="2.9" y2="5.9" width="0.127" layer="1"/>
-<wire x1="2.9" y1="5.9" x2="2.9" y2="-0.5" width="0.127" layer="1"/>
-<wire x1="2.9" y1="-0.5" x2="-7.6" y2="-0.5" width="0.127" layer="1"/>
+<smd name="P$1" x="0.57" y="0.89" dx="1.14" dy="1.78" layer="1"/>
+<smd name="P$2" x="-2.07" y="0.91" dx="1.14" dy="1.78" layer="1"/>
+<wire x1="-3.01" y1="-0.5" x2="-3.01" y2="2.18" width="0.127" layer="25"/>
+<wire x1="-3.01" y1="2.18" x2="1.52" y2="2.18" width="0.127" layer="25"/>
+<wire x1="1.52" y1="2.18" x2="1.52" y2="-0.5" width="0.127" layer="25"/>
+<wire x1="1.52" y1="-0.5" x2="-3.01" y2="-0.5" width="0.127" layer="25"/>
 </package>
 </packages>
 <symbols>
@@ -1219,44 +1219,6 @@ Based on  the following source:
 </connects>
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="AcceleratedDesigns_Lib">
-<packages>
-<package name="WB_GND">
-<pad name="1" x="0" y="0" drill="0"/>
-</package>
-</packages>
-<symbols>
-<symbol name="WB_GND@1">
-<pin name="1@1" x="0" y="2.54" visible="off" length="short" direction="pas" rot="MR270"/>
-<wire x1="0" y1="2.54" x2="0" y2="0" width="0.1524" layer="94"/>
-<wire x1="-3.302" y1="0" x2="3.302" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.286" y1="-1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
-<wire x1="-0.762" y1="-2.032" x2="0.762" y2="-2.032" width="0.1524" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="WB_GND">
-<gates>
-<gate name="1" symbol="WB_GND@1" x="0" y="0" addlevel="always"/>
-</gates>
-<devices>
-<device name="WB_GND" package="WB_GND">
-<connects>
-<connect gate="1" pin="1@1" pad="1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MANUFACTURER_NAME" value="WB_GND" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="WB_GND" constant="no"/>
-<attribute name="POWERPORTTYPE" value="POWER_GROUND" constant="no"/>
-<attribute name="VALUE" value="Value" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -1589,7 +1551,6 @@ Based on  the following source:
 <part name="R9" library="Tft_lcd_header" deviceset="RESISTOR" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="GND" library="AcceleratedDesigns_Lib" deviceset="WB_GND" device="WB_GND" value="WB_GND"/>
 <part name="VIN+" library="sps" deviceset="TP-1502" device=""/>
 <part name="GND-" library="sps" deviceset="TP-1502" device=""/>
 <part name="RFBT" library="sps" deviceset="CRCW04021M00FKED" device=""/>
@@ -2042,9 +2003,6 @@ Based on  the following source:
 <text x="104.14" y="22.86" size="1.778" layer="91">178k</text>
 </plain>
 <instances>
-<instance part="GND" gate="1" x="59.69" y="7.62" smashed="yes">
-<attribute name="NAME" x="59.69" y="13.208" size="2" layer="95" align="bottom-center" display="off"/>
-</instance>
 <instance part="VIN+" gate="A" x="-2.54" y="66.04" smashed="yes">
 <attribute name="NAME" x="-30.1244" y="75.1586" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 </instance>
@@ -2102,14 +2060,11 @@ Based on  the following source:
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="GND" gate="1" pin="1@1"/>
-<wire x1="12.7" y1="10.16" x2="59.69" y2="10.16" width="0" layer="91"/>
-<wire x1="59.69" y1="10.16" x2="78.74" y2="10.16" width="0" layer="91"/>
+<wire x1="12.7" y1="10.16" x2="78.74" y2="10.16" width="0" layer="91"/>
 <wire x1="78.74" y1="10.16" x2="93.98" y2="10.16" width="0" layer="91"/>
 <wire x1="93.98" y1="10.16" x2="116.84" y2="10.16" width="0" layer="91"/>
 <wire x1="116.84" y1="10.16" x2="157.48" y2="10.16" width="0" layer="91"/>
 <label x="132.08" y="5.08" size="1.778" layer="95"/>
-<junction x="59.69" y="10.16"/>
 <wire x1="12.7" y1="35.56" x2="12.7" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="35.56" x2="134.62" y2="35.56" width="0" layer="91"/>
 <wire x1="116.84" y1="35.56" x2="116.84" y2="10.16" width="0" layer="91"/>

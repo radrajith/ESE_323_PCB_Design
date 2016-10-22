@@ -159,6 +159,10 @@
 <text x="1.5" y="-4" size="1.27" layer="21">sda</text>
 <text x="1.5" y="-6" size="1.27" layer="21">scl</text>
 <text x="1.5" y="0" size="1.27" layer="21">gnd</text>
+<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-7.62" x2="-1.27" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-7.62" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
 </package>
 <package name="FE15">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
@@ -389,7 +393,7 @@
 <circle x="4.92" y="34.85" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.28" y="35.2" radius="1.51330625" width="0.127" layer="45"/>
 <circle x="74.07" y="-1.92" radius="1.51330625" width="0.127" layer="45"/>
-<hole x="4.9" y="34.85" drill="3.2"/>
+<hole x="4.9" y="-1.98" drill="3.2"/>
 </package>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
@@ -471,20 +475,20 @@
 <smd name="V-" x="-3.12" y="0.88" dx="2.35" dy="0.7" layer="1"/>
 <smd name="I_IN" x="1.13" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
 <smd name="I_OUT" x="-3.12" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
-<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="1"/>
-<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="1"/>
-<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="1"/>
-<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="1"/>
-<text x="-4.23" y="0.97" size="1.27" layer="21">-</text>
-<text x="2.4" y="0.97" size="1.27" layer="21">+</text>
+<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="21"/>
+<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="21"/>
+<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="21"/>
+<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="21"/>
+<text x="-4.23" y="0.97" size="1.27" layer="25">-</text>
+<text x="3.67" y="0.97" size="1.27" layer="21">+</text>
 </package>
 <package name="BANANA_PLUG">
 <pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
 <pad name="P$2" x="5.08" y="0" drill="1.3208" shape="square"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="1"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="1"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.127" layer="21"/>
+<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.127" layer="21"/>
 </package>
 <package name="JTAG">
 <wire x1="-6.35" y1="1.905" x2="-3.81" y2="1.905" width="0.1524" layer="21"/>
@@ -522,11 +526,11 @@
 <package name="RESISTOR">
 <smd name="1" x="-0.3" y="0.8" dx="0.6" dy="1.6" layer="1"/>
 <smd name="2" x="-2.8" y="0.85" dx="0.6" dy="1.7" layer="1"/>
-<text x="-0.82" y="0.19" size="0.254" layer="1">1k</text>
-<wire x1="-3.4925" y1="1.905" x2="0.3175" y2="1.905" width="0.127" layer="20"/>
-<wire x1="0.3175" y1="1.905" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
+<text x="-2.09" y="1.46" size="0.254" layer="25">1k</text>
+<wire x1="-3.4925" y1="2.025" x2="0.3175" y2="2.025" width="0.127" layer="20"/>
+<wire x1="0.3175" y1="2.025" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
 <wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="20"/>
-<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="1.905" width="0.127" layer="20"/>
+<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="2.025" width="0.127" layer="20"/>
 </package>
 <package name="BT4.5X4.5">
 <description>4.5 x 4.5 mm SMD button</description>
@@ -1184,12 +1188,12 @@ Based on  the following source:
 <library name="fuse_smt">
 <packages>
 <package name="FUSE_SMT">
-<smd name="P$1" x="1.1" y="2.7" dx="2.1" dy="5.4" layer="1"/>
-<smd name="P$2" x="-5.6" y="2.7" dx="2.1" dy="5.4" layer="1"/>
-<wire x1="-7.6" y1="-0.5" x2="-7.6" y2="5.9" width="0.127" layer="1"/>
-<wire x1="-7.6" y1="5.9" x2="2.9" y2="5.9" width="0.127" layer="1"/>
-<wire x1="2.9" y1="5.9" x2="2.9" y2="-0.5" width="0.127" layer="1"/>
-<wire x1="2.9" y1="-0.5" x2="-7.6" y2="-0.5" width="0.127" layer="1"/>
+<smd name="P$1" x="0.57" y="0.89" dx="1.14" dy="1.78" layer="1"/>
+<smd name="P$2" x="-2.07" y="0.91" dx="1.14" dy="1.78" layer="1"/>
+<wire x1="-3.01" y1="-0.5" x2="-3.01" y2="2.18" width="0.127" layer="25"/>
+<wire x1="-3.01" y1="2.18" x2="1.52" y2="2.18" width="0.127" layer="25"/>
+<wire x1="1.52" y1="2.18" x2="1.52" y2="-0.5" width="0.127" layer="25"/>
+<wire x1="1.52" y1="-0.5" x2="-3.01" y2="-0.5" width="0.127" layer="25"/>
 </package>
 </packages>
 <symbols>
