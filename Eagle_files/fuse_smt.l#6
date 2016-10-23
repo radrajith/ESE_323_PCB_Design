@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -58,18 +58,18 @@
 <library>
 <packages>
 <package name="FUSE_SMT">
-<smd name="P$1" x="0.57" y="0.89" dx="1.14" dy="1.78" layer="1"/>
-<smd name="P$2" x="-2.07" y="0.91" dx="1.14" dy="1.78" layer="1"/>
-<wire x1="-3.01" y1="-0.5" x2="-3.01" y2="2.18" width="0.127" layer="25"/>
-<wire x1="-3.01" y1="2.18" x2="1.52" y2="2.18" width="0.127" layer="25"/>
-<wire x1="1.52" y1="2.18" x2="1.52" y2="-0.5" width="0.127" layer="25"/>
-<wire x1="1.52" y1="-0.5" x2="-3.01" y2="-0.5" width="0.127" layer="25"/>
+<smd name="P$1" x="2.8" y="2.3" dx="5.55" dy="4.65" layer="1"/>
+<smd name="P$2" x="-10" y="2.3" dx="5.55" dy="4.65" layer="1"/>
+<wire x1="-13.3" y1="-0.5" x2="-13.3" y2="5.1" width="0.127" layer="1"/>
+<wire x1="-13.3" y1="5.1" x2="6.2" y2="5.1" width="0.127" layer="1"/>
+<wire x1="6.2" y1="5.1" x2="6.2" y2="-0.5" width="0.127" layer="1"/>
+<wire x1="6.2" y1="-0.5" x2="-13.3" y2="-0.5" width="0.127" layer="1"/>
 </package>
 </packages>
 <symbols>
 <symbol name="FUSE_SMT">
-<pin name="P$1" x="10.16" y="0" visible="off" length="middle" rot="R180"/>
-<pin name="P$2" x="-12.7" y="0" visible="off" length="middle"/>
+<pin name="P$1" x="10.16" y="0" length="middle" rot="R180"/>
+<pin name="P$2" x="-12.7" y="0" length="middle"/>
 <wire x1="-7.62" y1="0" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
 <wire x1="5.08" y1="2.54" x2="5.08" y2="0" width="0.254" layer="94"/>
@@ -81,22 +81,6 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="FUSE_SMT">
-<gates>
-<gate name="G$1" symbol="FUSE_SMT" x="2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="FUSE_SMT">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 </devicesets>
 </library>
 </drawing>

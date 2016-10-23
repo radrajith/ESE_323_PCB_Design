@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -304,20 +304,20 @@
 <rectangle x1="0.381" y1="32.766" x2="0.635" y2="33.274" layer="51" rot="R90"/>
 <wire x1="-1.27" y1="34.29" x2="1.27" y2="34.29" width="0.127" layer="21"/>
 <text x="-1.27" y="33.02" size="1.27" layer="21" rot="R90">14</text>
-<pad name="P$2" x="0" y="2.54" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$1" x="0" y="0" drill="0.8" diameter="2.1844" shape="square" rot="R90"/>
-<pad name="P$14" x="0" y="33.02" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$13" x="0" y="30.48" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$12" x="0" y="27.94" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$11" x="0" y="25.4" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$10" x="0" y="22.86" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$9" x="0" y="20.32" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$8" x="0" y="17.78" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$7" x="0" y="15.24" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$6" x="0" y="12.7" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$5" x="0" y="10.16" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$3" x="0" y="5.08" drill="0.8" diameter="2.1844" rot="R90"/>
-<pad name="P$4" x="0" y="7.62" drill="0.8" diameter="2.1844" rot="R90"/>
+<pad name="P$2" x="0" y="2.54" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$1" x="0" y="0" drill="1.2" diameter="2.1844" shape="square" rot="R90"/>
+<pad name="P$14" x="0" y="33.02" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$13" x="0" y="30.48" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$12" x="0" y="27.94" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$11" x="0" y="25.4" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$10" x="0" y="22.86" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$9" x="0" y="20.32" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$8" x="0" y="17.78" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$7" x="0" y="15.24" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$6" x="0" y="12.7" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$5" x="0" y="10.16" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$3" x="0" y="5.08" drill="1.2" diameter="2.1844" rot="R90"/>
+<pad name="P$4" x="0" y="7.62" drill="1.2" diameter="2.1844" rot="R90"/>
 <wire x1="-1.27" y1="-1.27" x2="-1.27" y2="34.29" width="0.127" layer="21"/>
 <wire x1="1.27" y1="-1.27" x2="1.27" y2="34.29" width="0.127" layer="21"/>
 <wire x1="0" y1="-4.85" x2="-2" y2="-4.85" width="0.127" layer="47"/>
@@ -407,16 +407,16 @@
 <rectangle x1="-3.0286" y1="3.556" x2="-2.5714" y2="4.5466" layer="51"/>
 </package>
 <package name="RESISTOR_4PIN">
-<smd name="V+" x="1.13" y="0.88" dx="2.35" dy="0.7" layer="1"/>
-<smd name="V-" x="-3.12" y="0.88" dx="2.35" dy="0.7" layer="1"/>
-<smd name="I_IN" x="1.13" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
-<smd name="I_OUT" x="-3.12" y="-2.68" dx="2.35" dy="5.4" layer="1"/>
-<wire x1="-5.158" y1="-5.95" x2="-5.158" y2="1.98" width="0.127" layer="21"/>
-<wire x1="-5.158" y1="1.98" x2="3.08" y2="1.98" width="0.127" layer="21"/>
-<wire x1="3.08" y1="1.98" x2="3.08" y2="-5.95" width="0.127" layer="21"/>
-<wire x1="3.08" y1="-5.95" x2="-5.158" y2="-5.95" width="0.127" layer="21"/>
-<text x="-4.23" y="0.97" size="1.27" layer="25">-</text>
-<text x="3.67" y="0.97" size="1.27" layer="21">+</text>
+<smd name="V+" x="1.13" y="0.88" dx="1.1" dy="0.7" layer="1"/>
+<smd name="V-" x="-1.97" y="0.88" dx="1.1" dy="0.7" layer="1"/>
+<smd name="I_IN" x="2.08" y="-2.68" dx="3" dy="5.4" layer="1"/>
+<smd name="I_OUT" x="-2.92" y="-2.68" dx="3" dy="5.4" layer="1"/>
+<wire x1="-4.698" y1="-5.9" x2="-4.698" y2="2.03" width="0.127" layer="21"/>
+<wire x1="-4.698" y1="2.03" x2="3.91" y2="2.03" width="0.127" layer="21"/>
+<wire x1="3.91" y1="2.03" x2="3.91" y2="-5.9" width="0.127" layer="21"/>
+<wire x1="3.91" y1="-5.9" x2="-4.698" y2="-5.9" width="0.127" layer="21"/>
+<text x="-3.08" y="0.97" size="1.27" layer="25">-</text>
+<text x="1.32" y="0.94" size="1.27" layer="21">+</text>
 </package>
 <package name="BANANA_PLUG">
 <pad name="P$1" x="-5.08" y="0" drill="1.3208" shape="square"/>
@@ -463,10 +463,10 @@
 <smd name="1" x="-0.3" y="0.8" dx="0.6" dy="1.6" layer="1"/>
 <smd name="2" x="-2.8" y="0.85" dx="0.6" dy="1.7" layer="1"/>
 <text x="-2.09" y="1.46" size="0.254" layer="25">1k</text>
-<wire x1="-3.4925" y1="2.025" x2="0.3175" y2="2.025" width="0.127" layer="20"/>
-<wire x1="0.3175" y1="2.025" x2="0.3175" y2="-0.3175" width="0.127" layer="20"/>
-<wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="20"/>
-<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="2.025" width="0.127" layer="20"/>
+<wire x1="-3.4925" y1="2.025" x2="0.3175" y2="2.025" width="0.127" layer="21"/>
+<wire x1="0.3175" y1="2.025" x2="0.3175" y2="-0.3175" width="0.127" layer="21"/>
+<wire x1="0.3175" y1="-0.3175" x2="-3.4925" y2="-0.3175" width="0.127" layer="21"/>
+<wire x1="-3.4925" y1="-0.3175" x2="-3.4925" y2="2.025" width="0.127" layer="21"/>
 </package>
 <package name="B3F-10XX">
 <description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
