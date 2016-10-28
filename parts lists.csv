@@ -15,7 +15,7 @@ Battery,battery holder,MPD,SBH421AS,digikey,SBH421AS-ND,1,1.27,1.27,,might be re
 "PB1, PB2",push button,omron,B3FS-1010P,Digikey,SW1440CT-ND,2,0.79,0.79,,,,
 F1,fuse,bel fuse,C1H 10,Digikey,507-1942-1-ND,5,0.306,1.53,,,,
 CON1,14 pin header,gtk,fhss14g10/rh,ebay,,1,0.4,0.4,ordered,10 for $4,,
-,Printed Circuit Board,fusion pcb,5x5,seeedstudio,,5,9.9,9.9,,cost will go down when combined,,
+,Printed Circuit Board,fusion pcb,5x5,seeedstudio,,5,$7.40 ,7.4,,The board was manufactured by combining 10 peoples projects and the cost was reduced from $17 to 7 dollars each,,
 Switching Power Supply,,,,,,,,,,,,
 Cin,capacitor,Taiyo Yuden,LMK212BJ106KG-T,Digikey,587-1300-1-ND,1,$0.20 ,$0.20 ,,10,0.139,1.39
 Cout,capacitor,Taiyo Yuden,LMK212BJ226MG-T,Digikey,587-1958-1-ND,2,$0.71 ,$0.14 ,,10,0.56,5.6
