@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LCD_ILI9341_ese323", "LCD_ILI9341_ese323\LCD_ILI9341_ese323_6_0.cproj", "{C980EF6A-E226-4DE5-94CD-85269E1B7CD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C980EF6A-E226-4DE5-94CD-85269E1B7CD2}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C980EF6A-E226-4DE5-94CD-85269E1B7CD2}.Debug|AVR.Build.0 = Debug|AVR
+		{C980EF6A-E226-4DE5-94CD-85269E1B7CD2}.Release|AVR.ActiveCfg = Release|AVR
+		{C980EF6A-E226-4DE5-94CD-85269E1B7CD2}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
