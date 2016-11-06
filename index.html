@@ -129,18 +129,26 @@ After running the design rule check, couple of errors was shown. These errors we
 </ul>
 
 <h5>
-<a id="modify-the-cam-file-by-yourself" class="anchor" href="#modify-the-cam-file-by-yourself" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify the cam file by yourself</h5>
+<a id="modify-the-cam-file-by-yourselfskip-this-if-you-used-the-cam-file-provided-by-me" class="anchor" href="#modify-the-cam-file-by-yourselfskip-this-if-you-used-the-cam-file-provided-by-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify the cam file by yourself(skip this if you used the cam file provided by me)</h5>
 
 <ul>
-<li>After opening the cam processor with the file downloaded from the seeedstudio <a href="http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines">link</a>, click "add" button
-<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_3.png?raw=true" alt="cam_3">
-this will create a duplicate window of drill&amp;holes. </li>
+<li>After opening the cam processor with the file downloaded from the seeedstudio <a href="http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines">link</a>, click "add" button</li>
+</ul>
+
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_3.png?raw=true" alt="cam_3"></p>
+
+<p>this will create a duplicate window of drill&amp;holes. </p>
+
+<ul>
 <li>Modify the "Section" from 'drill&amp;holes' to 'board outline'</li>
 <li>Change "device" from 'excellon' to 'GERBER_RS274X' in the dropdown menu</li>
 <li>Change the "file" extension from '.txt' to '.bor'</li>
-<li>On the right side list of layer, make sure only '20 dimension' is selected, scroll all the way to the bottom to make sure. 
-<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_4.png?raw=true" alt="cam_4">
-</li>
+<li>On the right side list of layer, make sure only '20 dimension' is selected, scroll all the way to the bottom to make sure. </li>
+</ul>
+
+<p><img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_4.PNG?raw=true" alt="cam_4"></p>
+
+<ul>
 <li>Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. </li>
 </ul>
 
