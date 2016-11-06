@@ -52,12 +52,38 @@ Board layout
 ###Design rule check and Cam Job
 After routing all the parts on the board layout, design rule check had to be used to confirm weather the board meets the requirements. Since Fusion pcb services was planned to be used, the design rule check from seeedstudio was downloaded([DRU link](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/SeeedStudio_2layer_DRU_no_angle_20140221.dru))
 After running the design rule check, couple of errors was shown. These errors were mainly becuasue of routing wires or vias close to each other. These errors were fixed and the DRC was repeated until there were no errors. 
+ 
+For the cam job, the cam file provided by the seeedstudio does not include one of the files required by the gerbemerge software, it requires a slight modification. The cam file provided from [seeedstudio website](http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines) does not generate ".bor" file required for the gerbmerge software. Download the modified cam file from [here](https://github.com/radrajith/ESE_323_PCB_Design/raw/master/Seeed_Gerber_Generater_2-layer.cam). If you choose to modify the cam file provided by seeedstudio by yourself, the instructions are provided after the procedure to create cam files
 
-For the cam job, the cam file provided on the seeedstudio does not include on of the files required by the gerbemerge software..............add more stuff
 
+####procedure to create cam files
+- In order to do the cam process, on the board window click file > cam processor.
+- This will open up a window, Click file > open > job
+![cam_1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam%20job%201.png?raw=true)
+- Locate you cam file downloaded provided in the above paragraph. 
+![cam_2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_2.png?raw=true)
+- Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
+
+#####Modify the cam file by yourself
+- After opening the cam processor with the file downloaded from the seeedstudio [link](http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines), click "add" button
+![cam_3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_3.png?raw=true)
+this will create a duplicate window of drill&holes. 
+- Modify the "Section" from 'drill&holes' to 'board outline'
+- Change "device" from 'excellon' to 'GERBER_RS274X' in the dropdown menu
+- Change the "file" extension from '.txt' to '.bor'
+- On the right side list of layer, make sure only '20 dimension' is selected, scroll all the way to the bottom to make sure. 
+![cam_4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_4.png?raw=true)
+- Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
+
+***
 ###Gerbmerge
-[For information about gerbemerge and tutorial](https://radrajith.github.io/gerbmerge/)
-Thank a lot frankie for helping me make the gerbmerge tutorial and actively contributing to it. 
+####**[For information about gerbemerge and tutorial](https://radrajith.github.io/gerbmerge/)**
+Thank a lot Frank Yee for helping me make the gerbmerge tutorial and actively contributing to it. 
+
+***
+###Autodesk Inventor Case design pics 
+coming soon. 
+***
 ###Gain Caluculations
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V
 
