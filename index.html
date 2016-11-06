@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Ese 323 pcb design by radrajith</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Ese 323 pcb design</h1>
-      <h2 class="project-tagline">Modern Circuit Board Design and Prototyping</h2>
-      <a href="https://github.com/radrajith/ESE_323_PCB_Design" class="btn">View on GitHub</a>
-      <a href="https://github.com/radrajith/ESE_323_PCB_Design/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/radrajith/ESE_323_PCB_Design/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <section class="main-content">
-      <h2>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ese 323 pcb design by radrajith</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ese 323 pcb design</h1>
+        <h2>Modern Circuit Board Design and Prototyping</h2>
+        <a href="https://github.com/radrajith/ESE_323_PCB_Design" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
 <a id="welcome-to-my-ese-323-project-page" class="anchor" href="#welcome-to-my-ese-323-project-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to my ESE 323 project page</h2>
 
 <hr>
@@ -103,7 +112,37 @@ Page two - Schematic drawing of the switching power supply obtained from texas i
 <p>After routing all the parts on the board layout, design rule check had to be used to confirm weather the board meets the requirements. Since Fusion pcb services was planned to be used, the design rule check from seeedstudio was downloaded(<a href="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/SeeedStudio_2layer_DRU_no_angle_20140221.dru">DRU link</a>)
 After running the design rule check, couple of errors was shown. These errors were mainly becuasue of routing wires or vias close to each other. These errors were fixed and the DRC was repeated until there were no errors. </p>
 
-<p>For the cam job, the cam file provided on the seeedstudio does not include on of the files required by the gerbemerge software..............add more stuff</p>
+<p>For the cam job, the cam file provided by the seeedstudio does not include one of the files required by the gerbemerge software, it requires a slight modification. The cam file provided from <a href="http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines">seeedstudio website</a> does not generate ".bor" file required for the gerbmerge software. Download the modified cam file from <a href="https://github.com/radrajith/ESE_323_PCB_Design/raw/master/Seeed_Gerber_Generater_2-layer.cam">here</a>. If you choose to modify the cam file provided by seeedstudio by yourself, the instructions are provided after the procedure to create cam files</p>
+
+<h4>
+<a id="procedure-to-create-cam-files" class="anchor" href="#procedure-to-create-cam-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>procedure to create cam files</h4>
+
+<ul>
+<li>In order to do the cam process, on the board window click file &gt; cam processor.</li>
+<li>This will open up a window, Click file &gt; open &gt; job
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam%20job%201.png?raw=true" alt="cam_1">
+</li>
+<li>Locate you cam file downloaded provided in the above paragraph. 
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_2.png?raw=true" alt="cam_2">
+</li>
+<li>Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. </li>
+</ul>
+
+<h5>
+<a id="modify-the-cam-file-by-yourself" class="anchor" href="#modify-the-cam-file-by-yourself" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify the cam file by yourself</h5>
+
+<ul>
+<li>After opening the cam processor with the file downloaded from the seeedstudio <a href="http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines">link</a>, click "add" button
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_3.png?raw=true" alt="cam_3">
+this will create a duplicate window of drill&amp;holes. </li>
+<li>Modify the "Section" from 'drill&amp;holes' to 'board outline'</li>
+<li>Change "device" from 'excellon' to 'GERBER_RS274X' in the dropdown menu</li>
+<li>Change the "file" extension from '.txt' to '.bor'</li>
+<li>On the right side list of layer, make sure only '20 dimension' is selected, scroll all the way to the bottom to make sure. 
+<img src="https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_4.png?raw=true" alt="cam_4">
+</li>
+<li>Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. </li>
+</ul>
 
 <hr>
 
@@ -638,14 +677,24 @@ taken from atmel xmega 32 datasheet</p>
 <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
 
 <p><a href="mailto:radrajith@gmail.com">radrajith@gmail.com</a> (2016)</p>
+        </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/radrajith/ESE_323_PCB_Design">Ese 323 pcb design</a> is maintained by <a href="https://github.com/radrajith">radrajith</a>.</span>
+        <aside id="sidebar">
+          <a href="https://github.com/radrajith/ESE_323_PCB_Design/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/radrajith/ESE_323_PCB_Design/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+          <p class="repo-owner"><a href="https://github.com/radrajith/ESE_323_PCB_Design"></a> is maintained by <a href="https://github.com/radrajith">radrajith</a>.</p>
 
-    </section>
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
