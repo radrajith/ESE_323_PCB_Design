@@ -145,7 +145,7 @@ The second design was planned to include a slide cover for ease of access to the
 
 To watch the solder melting and skip funny conversation, start at 3.25
 
-![vid](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
+[vid](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
 
 ### finished product
 ![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
@@ -213,7 +213,7 @@ With the ultimate goal of bringing down the cost, the PCB was designed with the 
 #### Quakko disaster 
 While programming the microprocessor, due to the lcd backlight requiring a lot of current, the battery was draining really quickly. To substitute the battery for a constant voltage source, Quakko power supply was used to supply the voltage. The switching power supply when turned on spiked to large voltage causing the SPS to instantly smoke. Due to this disaster, an additional 10 dollars was added to the BOM to obtain the extra SPS. 
 
-![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.jpg?raw=true)
+![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.png?raw=true)
 
 ***
 ### Gain Caluculations
