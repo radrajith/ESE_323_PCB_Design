@@ -145,7 +145,7 @@ The second design was planned to include a slide cover for ease of access to the
 
 To watch the solder melting and skip funny conversation, start at 3.25
 
-[vid](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
+[Oven Video](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
 
 ### finished product
 ![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
@@ -166,8 +166,8 @@ The switching power supply package is 3mmx3mm. Since the schematic and the board
 
 As seen in the picture below, although the pins look like they are making contact with pad, in reality they were not connecting. This flaw was figured out thanks to the amazing camera and zoom capabilities of the Samsung galaxy S7(the model without the automatical combustion feature). The microscope present in the lab was not able to provide a clear picture. 
 
-![sps1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps1.png?raw=true)
-![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps2.png?raw=true)
+![sps1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps1.PNG?raw=true)
+![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps2.PNG?raw=true)
 
 * Approach one 
    laying a bead of solder on the pads and hoping the solder mask will repel and prevent bridging. This approach almost never worked.
@@ -181,19 +181,19 @@ As seen in the picture below, although the pins look like they are making contac
    
    Pic 1
    
-   ![sps3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps3.PNG?raw=true)
+   ![sps3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps3.PNG?raw=true)
    
    Pic 2
    
-   ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps4.PNG?raw=true)
+   ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps4.PNG?raw=true)
     
     Pic 3
    
-   ![sps5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps5.PNG?raw=true)
+   ![sps5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps5.PNG?raw=true)
     
     Pic 4
    
-   ![sps6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps6.jpg?raw=true)
+   ![sps6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps6.jpg?raw=true)
    
 
 #### problem in schematic design
