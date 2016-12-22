@@ -3,6 +3,7 @@
 ***
 
 ### Description
+
 ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we are designing circuits using eagle cad software and also designing and building 3d models using Autocad. An Improved current meter will be designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. 
 
 ***
@@ -10,6 +11,7 @@ ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof We
 
 
 ### design and spec
+
 Design drawing(initial version)
 ![Initial design](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/hand%20drawings/initial%20design.jpg?raw=true)
 
@@ -20,9 +22,13 @@ The current is read by measuring the voltage that flows across a shunt resistor.
 Since the class is about coming with our own design and specs, I decided to add some extra feature to make this project cooler. A LCD touch screen is added to display the current readings such as peak, instantaneous, rms etc. In addition the LCD will be used to graph continuous data assuming I will finish the programming on time. Since the programming had to go through a number of revisions, a PDI communication will be implemented to modify the code as intended. In addition to serving as a normal current meter, A USB port will be added to monitor the current usage of mobile phone or other devices charged using USB. A micro usb port will be used as the input and USB as output. 
 
 ***
+
 ### Ideal World Scenario
+
 The Atxmega32 comes equipped with amplifier of various ranges like 1/2x, 1x,2x,8x...64x. And since the internal bandgap reference voltage is used, the reference voltage will be a constant 1V. This means by using a 0.01 ohm resistor and using a amplification of 1/2x, the max current that can be read using the meter will be 200A. 
+
 *** 
+
 ### Design: Considerations and practical limitations
 
 * **Why 7A current limit?**
@@ -39,7 +45,9 @@ Although the cost and sizing of both parts remain the same, for this design 0.01
 In addition to a 14 pin header, a 4 pin header is added for i2c communication to provide an alternative display source in case the touch screen display malfunctions and the if the coding cannot be finished on time. 
 
 ***
+
 ### **Schematic View**
+
 Page one - schematic of the whole circuit with headers, jtag, processor, shunt resistor, fuse, banana plug, usb switches connected and wired according to the requirement.
 
 ![Page one](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page1.PNG?raw=true)
@@ -49,10 +57,14 @@ Page two - Schematic drawing of the switching power supply obtained from texas i
 ![page two](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page2.PNG?raw=true)
 
 ###**Board view**
+
 Board layout
 ![board](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Board.PNG?raw=true)
+
 ***
+
 ### Design rule check and Cam Job
+
 After routing all the parts on the board layout, design rule check had to be used to confirm weather the board meets the requirements. Since Fusion pcb services was planned to be used, the design rule check from seeedstudio was downloaded([DRU link](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/SeeedStudio_2layer_DRU_no_angle_20140221.dru))
 After running the design rule check, couple of errors was shown. These errors were mainly becuasue of routing wires or vias close to each other. These errors were fixed and the DRC was repeated until there were no errors. 
  
@@ -60,6 +72,7 @@ For the cam job, the cam file provided by the seeedstudio does not include one o
 
 
 #### procedure to create cam files
+
 - In order to do the cam process, on the board window click file > cam processor.
 - This will open up a window, Click file > open > job
 
@@ -72,6 +85,7 @@ For the cam job, the cam file provided by the seeedstudio does not include one o
 - Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
 
 ##### Modify the cam file by yourself(skip this if you used the cam file provided by me)
+
 - After opening the cam processor with the file downloaded from the seeedstudio [link](http://support.seeedstudio.com/knowledgebase/articles/422482-fusion-pcb-order-submission-guidelines), click "add" button
 
 ![cam_3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_3.png?raw=true)
@@ -87,7 +101,9 @@ this will create a duplicate window of drill&holes.
 - Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
 
 ***
+
 ### Printed Circuit Board(merged)
+
 With primary goal of reducing the cost, group of 10 students joined and decided to combine the PCBs and place the order. Seeedstudio's PCB printint service was used. The 5 Boards were ordered(minimum quantity), for a 260mmX160mm sized board at the cost of $73.65.  
 
 Front view
@@ -98,14 +114,20 @@ Rear view
  
 ![back](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173631.jpg?raw=true)
 
-After obtaining the boards, we carefully analyzed for any errors that were made during the manufacturing process. Luckily all of the board were printed as designed in the eagle. 
+After obtaining the boards, we carefully analyzed for any errors that were made during the manufacturing process. Luckily all of the board were printed as designed in the eagle.
+
 ***
+
 ### Gerbmerge
+
 #### **[For information about gerbemerge and tutorial click here](https://radrajith.github.io/gerbmerge/)**
+
 Thank a lot Frank Yee for helping me make the gerbmerge tutorial and actively contributing to it. 
 
 ***
+
 ### Autodesk Inventor Case design pics 
+
 For the case, there were two designs printed. Althougth the first design fit able to encapsulate the board perfectly, there was some inconveniences when changing the battery and assembling the top cover. [First design pics](https://github.com/radrajith/ESE_323_PCB_Design/blob/gh-pages/initialCAD.md)
 The second design was planned to include a slide cover for ease of access to the battery. While programming the LCD screen it was clear that batteries had to be changed often. So accessing battery without disturbing anyother assembly was critical. After designing the first design, it was hard to keep the top case in place, for this reason a door type mechanism was devised and implemented. A stylus slot was added to store when not used, however due to over precision the slot sizing was little small. In addition a hole was added to access Jtag without having to remove the entire board out of the case. Similar to the first design the button press and lever was added to access button present beneath the LCD screen. 
 
@@ -141,13 +163,17 @@ The second design was planned to include a slide cover for ease of access to the
 ![Assembly2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly2.PNG?raw=true)
 
 ***
+
 ### 10 minute video of PCB baking in the oven
 
 To watch the solder melting and skip funny conversation, start at 3.25
 
 [Oven Video](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
 
+***
+
 ### finished product
+
 ![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
 ![case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case1.jpg?raw=true)
 ![case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case2.jpg?raw=true)
@@ -157,6 +183,7 @@ To watch the solder melting and skip funny conversation, start at 3.25
 ![case6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case6.jpg?raw=true)
 ![working](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/screen.gif?raw=true)
 
+***
 
 ### Problems faced and how it was solved
 
@@ -217,7 +244,8 @@ While programming the microprocessor, due to the lcd backlight requiring a lot o
 ![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.PNG?raw=true)
 
 ***
-### Gain Caluculations
+
+### Gain Calculations
 
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V. 
 
@@ -249,6 +277,7 @@ Once again, credits to Frank Yee for putting together and combining the BOM and 
 ***
 
 ### Cost spent 
+
 * PCB Board
 
 size - 160mmx260mm 
@@ -311,12 +340,17 @@ Total - $19.10
 
 overall the total cost of the whole project was $48. If some precautionary measure were taken to avoid the quakko disaster, the cost can be reduced $38. If Easyeda pcb printing service was used, the cost could have been reduced further to $34. 
 
+***
+
 ### Course improvement suggestions
+
 * Finer solder paste to be used with the thinnest needle. 
 * Encouraging to form groups to bring down the cost of the project
 * Deadlines to force student to finish the board designs on time. 
 * Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
 * Good microscope or Samsung galaxy S7 phone available in the lab to obtain a magnified view of the connection in the PCB
+
+***
 
 ### Contact
 radrajith@gmail.com (2016)
