@@ -125,11 +125,29 @@ The second design was planned to include a slide cover for ease of access to the
 ![Assembly2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly2.PNG?raw=true)
 
 ***
+### finished product
+![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
+![case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case1.jpg?raw=true)
+![case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case2.jpg?raw=true)
+![case3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case3.jpg?raw=true)
+![case4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case4.jpg?raw=true)
+![case5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case5.jpg?raw=true)
+![case6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case6.jpg?raw=true)
+![working](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/screen.gif?raw=true)
+
+
 ### Problems faced and how it was solved
 #### TPS63000 switching power supply assembly
-The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Multiple approaches were tried and we finally figured out the best way to solder this package
+The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Multiple approaches were tried and we finally figured out the best way to solder this package.(i will add details soon)
 
-[sps](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.jpg?raw=true)
+![sps](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.jpg?raw=true)
+#### problem in schematic design
+when designing the schematic i had two pages. One containing the sps and other containing the rest. When naming the net for vout of the SPS, i named it +3v3 on one page and 3v3 on the other. This means there was no connecting present in the board. 
+This problem was intially fixed by connecting a wire between Cout and the vcc of the jtag. 
+![vccfix1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix1.jpg?raw=true)
+
+However this fix made the front of my board look ugly. For this reason, i found a via that was coming out on back, and scrapped the solder mask and the gnd plane to make a connection on the back. 
+![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix2.jpg?raw=true)
 
 ### Gain Caluculations
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V. 
