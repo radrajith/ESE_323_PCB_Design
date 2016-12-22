@@ -143,6 +143,8 @@ The second design was planned to include a slide cover for ease of access to the
 ***
 ### 10 minute video of PCB baking in the oven
 
+To watch the solder melting and skip funny conversation, start at 3.25
+
 ![vid](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/pcb_in_oven.mp4?raw=true)
 
 ### finished product
@@ -247,38 +249,63 @@ Once again, credits to Frank Yee for putting together and combining the BOM and 
 
 ### Cost spent 
 * PCB Board
+
 size - 160mmx260mm 
+
 quantity - 5
+
 Cost - $59.92
+
 Shipping - $19.72
+
 Discount - -$5.99
+
 Total  - $73.65
 
 * Digikey order 
+
 66 parts
+
 Cost - $129.87
+
 Shipping - $13.50
+
 Tax - $12.37
+
 Total - $155.74
 
 * Texas Instruments order
+
 TPS63000
+
 Quantity - 10 
+
 Cost - $1.91
+
 Total - $19.10
 
 * Total Money spent 
 
 | Rajith  | 48  |
+
 | Harvey  | 35  |
+
 | Frank   | 31  |
+
 | Thomas  | 32  |
+
 | Ka Wing | 49  |
+
 | Raymond | 29  |
+
 | Jerry   | 27  |
+
 | Daniel  | 40  |
+
 | Juan    | 22  |
+
 | Ricky   | 28  |
+
 |   **total**      | 341 |
 
 overall the total cost of the whole project was $48. If some precautionary measure were taken to avoid the quakko disaster, the cost can be reduced $38. If Easyeda pcb printing service was used, the cost could have been reduced further to $34. 
@@ -288,7 +315,7 @@ overall the total cost of the whole project was $48. If some precautionary measu
 * Encouraging to form groups to bring down the cost of the project
 * Deadlines to force student to finish the board designs on time. 
 * Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
-* Good microscope or Samsung galaxy S7 phone available to obtain a magnified view of the connection in the PCB
+* Good microscope or Samsung galaxy S7 phone available in the lab to obtain a magnified view of the connection in the PCB
 
 ### Contact
 radrajith@gmail.com (2016)
