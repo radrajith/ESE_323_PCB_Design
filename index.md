@@ -165,8 +165,9 @@ To watch the solder melting and skip funny conversation, start at 3.25
 The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the true size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Since the solder paste used was coarse, the solder paste did not flow thorough the thinnest needles. Multiple approaches were tried and we finally figured out the best way to solder this package.
 
 As seen in the picture below, although the pins look like they are making contact with pad, in reality they were not connecting. This flaw was figured out thanks to the amazing camera and zoom capabilities of the Samsung galaxy S7(the model without the automatical combustion feature). The microscope present in the lab was not able to provide a clear picture. 
-![sps1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.png?raw=true)
-![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps2.png?raw=true)
+
+![sps1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps1.png?raw=true)
+![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/sps2.png?raw=true)
 
 * Approach one 
    laying a bead of solder on the pads and hoping the solder mask will repel and prevent bridging. This approach almost never worked.
@@ -180,25 +181,25 @@ As seen in the picture below, although the pins look like they are making contac
    
    Pic 1
    
-   ![sps3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps3.PNG?raw=true)
+   ![sps3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps3.PNG?raw=true)
    
    Pic 2
    
-   ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps4.PNG?raw=true)
+   ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps4.PNG?raw=true)
     
     Pic 3
    
-   ![sps5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps5.PNG?raw=true)
+   ![sps5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps5.PNG?raw=true)
     
     Pic 4
    
-   ![sps6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps6.jpg?raw=true)
+   ![sps6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_20assembly/sps6.jpg?raw=true)
    
 
 #### problem in schematic design
 
 when designing the schematic i had two pages. One containing the sps and other containing the rest. When naming the net for vout of the SPS, i named it +3v3 on one page and 3v3 on the other. When reading the net name in page 2, i misread the + that is used to indicate the location, and name the vcc in page 1 as +3v3. This means there was no connecting present in the board. 
-![vccprob](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccprob.png?raw=true)
+![vccprob](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccprob.PNG?raw=true)
 This problem was intially fixed by connecting a wire between Cout and the vcc of the jtag. 
 ![vccfix1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix1.jpg?raw=true)
 
@@ -213,7 +214,7 @@ With the ultimate goal of bringing down the cost, the PCB was designed with the 
 #### Quakko disaster 
 While programming the microprocessor, due to the lcd backlight requiring a lot of current, the battery was draining really quickly. To substitute the battery for a constant voltage source, Quakko power supply was used to supply the voltage. The switching power supply when turned on spiked to large voltage causing the SPS to instantly smoke. Due to this disaster, an additional 10 dollars was added to the BOM to obtain the extra SPS. 
 
-![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.png?raw=true)
+![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.PNG?raw=true)
 
 ***
 ### Gain Caluculations
