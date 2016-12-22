@@ -137,39 +137,90 @@ The second design was planned to include a slide cover for ease of access to the
 
 
 ### Problems faced and how it was solved
+
 #### TPS63000 switching power supply assembly
+
 The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Multiple approaches were tried and we finally figured out the best way to solder this package.(i will add details soon)
 
 ![sps](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.jpg?raw=true)
+
 #### problem in schematic design
+
 when designing the schematic i had two pages. One containing the sps and other containing the rest. When naming the net for vout of the SPS, i named it +3v3 on one page and 3v3 on the other. This means there was no connecting present in the board. 
+![vccprob](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccprob.png?raw=true)
 This problem was intially fixed by connecting a wire between Cout and the vcc of the jtag. 
 ![vccfix1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix1.jpg?raw=true)
 
-However this fix made the front of my board look ugly. For this reason, i found a via that was coming out on back, and scrapped the solder mask and the gnd plane to make a connection on the back. 
+However this fix made the front of my board look ugly. For this reason, i found a via that was coming out on back, and scratched the solder mask off and the metal of the via to make a connection on the back. 
 ![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix2.jpg?raw=true)
 
 ### Gain Caluculations
+
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V. 
 
 ![gain](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/gain%20calculation.png?raw=true)
 
 ***
+
 ### Coding
+
 Although major coding is yet to be done, the welcome screen code is currently running on the board. In coming days the touch screen functionality will be implemented along with push button functionality. The ADC code is almost complete, with minor fixes the current meter reading can be done. Ideas for a snake game is partially coded. 
 The coding that has been done so far has been included below
 [Code](https://github.com/radrajith/ATXMEGA_ILI9341_RGBLCD/tree/master/LCD_ILI9341_ESE_323)
 
 Problems faced and coding experience details will be added in the coming days.
+
 ***
+
 ### Parts, pinouts, BOM
+
 The detailed picture of the parts used has been seperated into a different page along with the BOM. 
 [Parts, pinouts, BOM](https://github.com/radrajith/ESE_323_PCB_Design/blob/gh-pages/partsDetail.md)
 
 Since the order of the 10 people were combined, the link to the Super BOM is also attached below.
 [Super BOM](https://docs.google.com/spreadsheets/d/1yWEKycQpd-gtfOP6fBI8lNDqo7oUvL_eeN0UET3jQ1g/edit?usp=sharing)
-Once again, credits to Frank Yee for putting together and combining the BOM and also managing the finances. 
+
+
+Once again, credits to Frank Yee for putting together and combining the BOM and also managing the finances.
+
 ***
+
+### Cost spent 
+* PCB Board
+size - 160mmx260mm 
+quantity - 5
+Cost - $59.92
+Shipping - $19.72
+Discount - -$5.99
+Total  - $73.65
+
+* Digikey order 
+66 parts
+Cost - $129.87
+Shipping - $13.50
+Tax - $12.37
+Total - $155.74
+
+* Texas Instruments order
+TPS63000
+Quantity - 10 
+Cost - $1.91
+Total - $19.10
+
+* Total Money spent 
+
+| Rajith  | 48  |
+| Harvey  | 35  |
+| Frank   | 31  |
+| Thomas  | 32  |
+| Ka Wing | 49  |
+| Raymond | 29  |
+| Jerry   | 27  |
+| Daniel  | 40  |
+| Juan    | 22  |
+| Ricky   | 28  |
+|   **total**      | 341 |
+
 ### Course improvement suggestions
 * Finer solder paste to be used with the thinnest needle. 
 * Encouraging to form groups to bring down the cost of the project
