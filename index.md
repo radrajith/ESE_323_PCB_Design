@@ -6,16 +6,7 @@
 ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we are designing circuits using eagle cad software and also designing and building 3d models using Autocad. An Improved current meter will be designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. 
 
 ***
-### Printed Circuit Board(merged)
-Front view
 
-![front](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173616.jpg?raw=true)
-
-Rear view
- 
-![back](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173631.jpg?raw=true)
-
-***
 
 
 ###design and spec
@@ -87,6 +78,18 @@ this will create a duplicate window of drill&holes.
 
 - Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
 
+***
+### Printed Circuit Board(merged)
+With primary goal of reducing the cost, group of 10 students joined and decided to combine the PCBs and place the order. Seeedstudio's PCB printint service was used. The 5 Boards were ordered(minimum quantity), for a 260mmX160mm sized board at the cost of $73.65.  
+Front view
+
+![front](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173616.jpg?raw=true)
+
+Rear view
+ 
+![back](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173631.jpg?raw=true)
+
+After obtaining the boards, we carefully analyzed for any errors that were made during the manufacturing process. Luckily all of the board were printed as designed in the eagle. 
 ***
 ###Gerbmerge
 ####**[For information about gerbemerge and tutorial click here](https://radrajith.github.io/gerbmerge/)**
