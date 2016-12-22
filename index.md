@@ -145,7 +145,7 @@ The second design was planned to include a slide cover for ease of access to the
 
 To watch the solder melting and skip funny conversation, start at 3.25
 
-![vid](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/pcb_in_oven.mp4?raw=true)
+![vid](https://goo.gl/photos/HqDbT51zgB6RFGLk8)
 
 ### finished product
 ![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
