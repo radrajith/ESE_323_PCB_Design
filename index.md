@@ -56,7 +56,7 @@ Page two - Schematic drawing of the switching power supply obtained from texas i
 
 ![page two](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page2.PNG?raw=true)
 
-###**Board view**
+### **Board view**
 
 Board layout
 ![board](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Board.PNG?raw=true)
