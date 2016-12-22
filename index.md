@@ -99,21 +99,22 @@ Thank a lot Frank Yee for helping me make the gerbmerge tutorial and actively co
 ###Autodesk Inventor Case design pics 
 For the case, there were two designs printed. Althougth the first design fit able to encapsulate the board perfectly, there was some inconveniences when changing the battery and assembling the top cover. [First design pics](https://github.com/radrajith/ESE_323_PCB_Design/blob/gh-pages/initialCAD.md)
 The second design was planned to include a slide cover for ease of access to the battery. While programming the LCD screen it was clear that batteries had to be changed often. So accessing battery without disturbing anyother assembly was critical. After designing the first design, it was hard to keep the top case in place, for this reason a door type mechanism was devised and implemented. A stylus slot was added to store when not used, however due to over precision the slot sizing was little small. In addition a hole was added to access Jtag without having to remove the entire board out of the case. Similar to the first design the button press and lever was added to access button present beneath the LCD screen. 
-Circuit Board
+
+* Circuit Board
 ![circuit Design](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/circuit_design_cad.PNG?raw=true)
-Bottom case
+* Bottom case
 ![top case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top1.PNG?raw=true)
 ![top case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top2.PNG?raw=true)
-Bottom case
+* Bottom case
 ![bottom case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/bottom1.PNG?raw=true)
 ![bottom case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/bottom2.PNG?raw=true)
-Button press extension
+* Button press extension
 ![button press](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/buttonpress.PNG?raw=true)
-Button press lever
+* Button press lever
 ![lever](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/mallet.PNG?raw=true)
-battery cover
+* battery cover
 ![battery cover](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/batterycover.PNG?raw=true)
-Assembled parts view. 
+* Assembled parts view. 
 ![Assembly1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly1.PNG?raw=true)
 ![Assembly2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly2.PNG?raw=true)
 
@@ -122,6 +123,7 @@ Assembled parts view.
 ####TPS63000 switching power supply assembly
 The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Multiple approaches were tried and we finally figured out the best way to solder this package
 
+[sps](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.jpg?raw=true)
 
 ###Gain Caluculations
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V. 
@@ -143,12 +145,12 @@ The detailed picture of the parts used has been seperated into a different page 
 Since the order of the 10 people were combined, the link to the Super BOM is also attached below.
 [Super BOM](https://docs.google.com/spreadsheets/d/1yWEKycQpd-gtfOP6fBI8lNDqo7oUvL_eeN0UET3jQ1g/edit?usp=sharing)
 Once again, credits to Frank Yee for putting together and combining the BOM and also managing the finances. 
-
+***
 ###Course improvement suggestions
-*Finer solder paste to be used with the thinnest needle. 
-*Encouraging to form groups to bring down the cost of the project
-*Deadlines to force student to finish the board designs on time. 
-*Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
+* Finer solder paste to be used with the thinnest needle. 
+* Encouraging to form groups to bring down the cost of the project
+* Deadlines to force student to finish the board designs on time. 
+* Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
 
 ### Contact
 radrajith@gmail.com (2016)
