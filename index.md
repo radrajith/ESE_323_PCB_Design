@@ -113,7 +113,7 @@ The second design was planned to include a slide cover for ease of access to the
 
 ![circuit Design](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/circuit_design_cad.PNG?raw=true)
 
-* Bottom case
+* Top case
 
 ![top case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top1.PNG?raw=true)
 ![top case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top2.PNG?raw=true)
