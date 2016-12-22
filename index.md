@@ -140,13 +140,31 @@ The second design was planned to include a slide cover for ease of access to the
 
 #### TPS63000 switching power supply assembly
 
-The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Multiple approaches were tried and we finally figured out the best way to solder this package.(i will add details soon)
+The switching power supply package is 3mmx3mm. Since the schematic and the board layout were obtained from texas instruments(webbench), the true size of the pads and the package were not realized until we saw the pcb. Soldering this package was causing the major problem. Since the solder paste used was coarse, the solder paste did not flow thorough the thinnest needles. Multiple approaches were tried and we finally figured out the best way to solder this package.
 
-![sps](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.jpg?raw=true)
+As seen in the picture below, although the pins look like they are making contact with pad, in reality they were not connecting. This flaw was figured out thanks to the amazing camera and zoom capabilities of the Samsung galaxy S7(the model without the automatical combustion feature). The microscope present in the lab was not able to provide a clear picture. 
+![sps1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps1.png?raw=true)
+![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps2.png?raw=true)
+
+* Approach one 
+   laying a bead of solder on the pads and hoping the solder mask will repel and prevent bridging. This approach almost never worked. 
+* Approach two
+   placing a line of solder on a paper towel, making a knife like stucture using paper and placing the exact amount on the pads. This process was highly time consuming and required patience and skills. [Credits - method invented by Harvey and Ricky]
+* Approach three (success 100%)
+   Instead of relying on the reflow oven to melt the solder paste and make connections, the heat gun was utilized. Intially the center pad of the SPS was soldered on either using the heatgun or reflow oven(center pad marked in pic 1 below using magenta pen). Once the SPS is correctly placed and firmly secured at the center pad. A bead of solder had to applied on the pins(pic 2). Take a napkin and wipe the SPS all around. Since the package is very small, when the excess is cleaned, a line of solder paste is left handing in the corner(pic 3).  
+   
+   Pic 1
+   
+   ![sps3](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps3.PNG?raw=true)
+   
+   Pic 2
+   
+   ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps4.PNG?raw=true)
+   
 
 #### problem in schematic design
 
-when designing the schematic i had two pages. One containing the sps and other containing the rest. When naming the net for vout of the SPS, i named it +3v3 on one page and 3v3 on the other. This means there was no connecting present in the board. 
+when designing the schematic i had two pages. One containing the sps and other containing the rest. When naming the net for vout of the SPS, i named it +3v3 on one page and 3v3 on the other. When reading the net name in page 2, i misread the + that is used to indicate the location, and name the vcc in page 1 as +3v3. This means there was no connecting present in the board. 
 ![vccprob](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccprob.png?raw=true)
 This problem was intially fixed by connecting a wire between Cout and the vcc of the jtag. 
 ![vccfix1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix1.jpg?raw=true)
