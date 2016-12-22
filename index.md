@@ -41,9 +41,13 @@ In addition to a 14 pin header, a 4 pin header is added for i2c communication to
 ***
 ### **Schematic View**
 Page one - schematic of the whole circuit with headers, jtag, processor, shunt resistor, fuse, banana plug, usb switches connected and wired according to the requirement.
+
 ![Page one](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page1.PNG?raw=true)
+
 Page two - Schematic drawing of the switching power supply obtained from texas instruments 
+
 ![page two](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/schmatic_page2.PNG?raw=true)
+
 ###**Board view**
 Board layout
 ![board](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/Board.PNG?raw=true)
@@ -58,9 +62,13 @@ For the cam job, the cam file provided by the seeedstudio does not include one o
 #### procedure to create cam files
 - In order to do the cam process, on the board window click file > cam processor.
 - This will open up a window, Click file > open > job
+
 ![cam_1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam%20job%201.png?raw=true)
+
 - Locate you cam file downloaded provided in the above paragraph. 
+
 ![cam_2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/cam_job_2.png?raw=true)
+
 - Click process job. This will create all the files necessary to perform gerbmerge operation(described below) or upload to the pcb printing service. 
 
 ##### Modify the cam file by yourself(skip this if you used the cam file provided by me)
@@ -81,6 +89,7 @@ this will create a duplicate window of drill&holes.
 ***
 ### Printed Circuit Board(merged)
 With primary goal of reducing the cost, group of 10 students joined and decided to combine the PCBs and place the order. Seeedstudio's PCB printint service was used. The 5 Boards were ordered(minimum quantity), for a 260mmX160mm sized board at the cost of $73.65.  
+
 Front view
 
 ![front](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/20161107_173616.jpg?raw=true)
@@ -101,30 +110,41 @@ For the case, there were two designs printed. Althougth the first design fit abl
 The second design was planned to include a slide cover for ease of access to the battery. While programming the LCD screen it was clear that batteries had to be changed often. So accessing battery without disturbing anyother assembly was critical. After designing the first design, it was hard to keep the top case in place, for this reason a door type mechanism was devised and implemented. A stylus slot was added to store when not used, however due to over precision the slot sizing was little small. In addition a hole was added to access Jtag without having to remove the entire board out of the case. Similar to the first design the button press and lever was added to access button present beneath the LCD screen. 
 
 * Circuit Board
+
 ![circuit Design](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/circuit_design_cad.PNG?raw=true)
 
 * Bottom case
+
 ![top case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top1.PNG?raw=true)
 ![top case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/top2.PNG?raw=true)
 
 * Bottom case
+
 ![bottom case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/bottom1.PNG?raw=true)
 ![bottom case2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/bottom2.PNG?raw=true)
 
 * Button press extension
+
 ![button press](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/buttonpress.PNG?raw=true)
 
 * Button press lever
+
 ![lever](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/mallet.PNG?raw=true)
 
 * battery cover
+
 ![battery cover](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/batterycover.PNG?raw=true)
 
 * Assembled parts view. 
+
 ![Assembly1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly1.PNG?raw=true)
 ![Assembly2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/New%20cad%20design/assembly2.PNG?raw=true)
 
 ***
+### 10 minute video of PCB baking in the oven
+
+![vid](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/pcb_in_oven.mp4?raw=true)
+
 ### finished product
 ![buttonpresses](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/button%20presses.jpg?raw=true)
 ![case1](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/case1.jpg?raw=true)
@@ -147,11 +167,14 @@ As seen in the picture below, although the pins look like they are making contac
 ![sps2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps2.png?raw=true)
 
 * Approach one 
-   laying a bead of solder on the pads and hoping the solder mask will repel and prevent bridging. This approach almost never worked. 
+   laying a bead of solder on the pads and hoping the solder mask will repel and prevent bridging. This approach almost never worked.
+   
 * Approach two
+
    placing a line of solder on a paper towel, making a knife like stucture using paper and placing the exact amount on the pads. This process was highly time consuming and required patience and skills. [Credits - method invented by Harvey and Ricky]
+   
 * Approach three (success 100%)
-   Instead of relying on the reflow oven to melt the solder paste and make connections, the heat gun was utilized. Intially the center pad of the SPS was soldered on either using the heatgun or reflow oven(center pad marked in pic 1 below using magenta pen). Once the SPS is correctly placed and firmly secured at the center pad. A bead of solder had to applied on the pins(pic 2). Take a napkin and wipe the SPS all around. Since the package is very small, when the excess is cleaned, a line of solder paste is left handing in the corner(pic 3).  
+   Instead of relying on the reflow oven to melt the solder paste and make connections, the hot air gun was utilized. Intially the center pad of the SPS was soldered on either using the heatgun or reflow oven(center pad marked in pic 1 below using magenta pen). Once the SPS is correctly placed and firmly secured at the center pad. A bead of solder had to applied on the pins(pic 2). Take a napkin and wipe the SPS all around. Since the package is very small, when the excess is cleaned, a line of solder paste is left handing in the corner(pic 3). Setting the hot air gun to 300 degrees, the hot air was direcly blown on top of the SPS until the solder paste turned shiny(5-10s). Pic 4 shows the clean connection joints made, a amazing zoom skills of Samsung S7. 
    
    Pic 1
    
@@ -160,6 +183,14 @@ As seen in the picture below, although the pins look like they are making contac
    Pic 2
    
    ![sps4](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps4.PNG?raw=true)
+    
+    Pic 3
+   
+   ![sps5](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps5.PNG?raw=true)
+    
+    Pic 4
+   
+   ![sps6](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB%20assembly/sps6.jpg?raw=true)
    
 
 #### problem in schematic design
@@ -172,6 +203,17 @@ This problem was intially fixed by connecting a wire between Cout and the vcc of
 However this fix made the front of my board look ugly. For this reason, i found a via that was coming out on back, and scratched the solder mask off and the metal of the via to make a connection on the back. 
 ![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/vccfix2.jpg?raw=true)
 
+#### Pushbutton placed underneath the LCD
+
+With the ultimate goal of bringing down the cost, the PCB was designed with the least size (5mmx5mm), thus pushbutton had to be buried underneath the lcd screen. To access the pushbutton the lever type mechanism was implemented in the case design (refer to the button lever picture under the autocad inventor design pics). The foced applied on the button press is transferred to the lever and presses the button. 
+
+
+#### Quakko disaster 
+While programming the microprocessor, due to the lcd backlight requiring a lot of current, the battery was draining really quickly. To substitute the battery for a constant voltage source, Quakko power supply was used to supply the voltage. The switching power supply when turned on spiked to large voltage causing the SPS to instantly smoke. Due to this disaster, an additional 10 dollars was added to the BOM to obtain the extra SPS. 
+
+![vccfix2](https://github.com/radrajith/ESE_323_PCB_Design/blob/master/Pictures/PCB_assembly/quakko.jpg?raw=true)
+
+***
 ### Gain Caluculations
 
 Highlighted areas indicate the ADC readings. The gain will decrease as the voltage reading goes over 0.96V. 
@@ -239,11 +281,14 @@ Total - $19.10
 | Ricky   | 28  |
 |   **total**      | 341 |
 
+overall the total cost of the whole project was $48. If some precautionary measure were taken to avoid the quakko disaster, the cost can be reduced $38. If Easyeda pcb printing service was used, the cost could have been reduced further to $34. 
+
 ### Course improvement suggestions
 * Finer solder paste to be used with the thinnest needle. 
 * Encouraging to form groups to bring down the cost of the project
 * Deadlines to force student to finish the board designs on time. 
 * Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
+* Good microscope or Samsung galaxy S7 phone available to obtain a magnified view of the connection in the PCB
 
 ### Contact
 radrajith@gmail.com (2016)
