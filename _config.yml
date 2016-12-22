@@ -1,0 +1,8 @@
+title: Ese 323 pcb design
+description: Modern Circuit Board Design and Prototyping
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
