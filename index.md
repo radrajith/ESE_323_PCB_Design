@@ -349,6 +349,7 @@ overall the total cost of the whole project was $48. If some precautionary measu
 * Deadlines to force student to finish the board designs on time. 
 * Warn the students about the package sizing, but dont ban the usage of tiny and impossible package. Lets student make mistakes and force them to come up with good solutions. 
 * Good microscope or Samsung galaxy S7 phone available in the lab to obtain a magnified view of the connection in the PCB
+* Processor with larger memory
 
 ***
 
