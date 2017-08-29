@@ -1,4 +1,4 @@
-## Welcome to my ESE 323 project page
+## Improved Ammeter Design Project Page
 
 ***
 
