@@ -4,7 +4,7 @@
 
 ### Description
 
-ESE 323 is a Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we are designing circuits using eagle cad software and also designing and building 3d models using Autocad. An Improved current meter will be designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. 
+Project developed in Modern Circuit Board Design and Prototyping class taught by Prof Westerfeld. During this class, we designed circuits using eagle cad software and also designed and built 3d models using Autocad. An Improved current meter was designed and built for the final project. This current meter design is intended to minimize the effects of burden voltage that is present in the multimeters used in the lab and other facilites. 
 
 ***
 
